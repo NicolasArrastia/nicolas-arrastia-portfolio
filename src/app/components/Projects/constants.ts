@@ -12,34 +12,4 @@ export const PROJECTS: ProjectData[] = [
     image: TodoApp,
     url: "https://next-todo-app-lovat.vercel.app/",
   },
-  {
-    title: "Weather App",
-    image: GreatWaveOfKanagawa,
-    url: "https://next-todo-app-lovat.vercel.app/",
-  },
-  {
-    title: "Todo App",
-    image: TodoApp,
-    url: "https://next-todo-app-lovat.vercel.app/",
-  },
-  {
-    title: "Weather App",
-    image: GreatWaveOfKanagawa,
-    url: "https://next-todo-app-lovat.vercel.app/",
-  },
-  {
-    title: "Weather App",
-    image: GreatWaveOfKanagawa,
-    url: "https://next-todo-app-lovat.vercel.app/",
-  },
-  {
-    title: "Todo App",
-    image: TodoApp,
-    url: "https://next-todo-app-lovat.vercel.app/",
-  },
-  {
-    title: "Weather App",
-    image: GreatWaveOfKanagawa,
-    url: "https://next-todo-app-lovat.vercel.app/",
-  },
 ];
