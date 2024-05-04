@@ -16,10 +16,10 @@ const About = () => {
       <TitleText text="About" />
       <motion.p {...DEFAULT_TRANSITION_SETTINGS}>about me here</motion.p>
 
-      <TitleText text="Hobbies" delay={1} />
+      <TitleText text="Hobbies" delay={0.75} />
       <motion.p {...DEFAULT_TRANSITION_SETTINGS}>hobbies here</motion.p>
 
-      <TitleText text="Pets" delay={1.5} />
+      <TitleText text="Pets" delay={1} />
       <motion.p {...DEFAULT_TRANSITION_SETTINGS}>and my pets here</motion.p>
     </SectionLayout>
   );
