@@ -26,20 +26,19 @@ const Header = () => {
   }, []);
 
   return (
-    <div
-      className="
-  fixed z-40
-  w-screen
-  h-screen
-  text-neutral-50"
-    >
+    <>
       <header
-        className={`
+        className={`z-40
+        fixed
+        text-neutral-50
      flex justify-between items-center
   w-full
    transition-colors duration-300 ${
-     scrollY > THRESHOLD ? "bg-neutral-950" : "bg-transparent"
+     scrollY > THRESHOLD
+       ? "bg-neutral-950 shadow-md shadow-neutral-50/5"
+       : "bg-transparent"
    }
+   
    py-2 px-4 md:px-16 text-neutral-50`}
       >
         <Image src={NicolasLogo} width={30} alt={"nicolas arrastia logo"} />
@@ -54,7 +53,7 @@ const Header = () => {
         scrollY={scrollY}
         isOpen={isMenuOpen}
       />
-    </div>
+    </>
   );
 };
 

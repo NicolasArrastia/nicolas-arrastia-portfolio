@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { NAV_OPTIONS, THRESHOLD } from "../constants";
+import { HEADER_HEIGHT, NAV_OPTIONS, THRESHOLD } from "../constants";
 
 type Props = {
   scrollY: number;
@@ -8,20 +8,26 @@ type Props = {
   onClick: () => void;
 };
 
+// TODO: Add background here
 const Menu = ({ scrollY = 0, isOpen = true, onClick }: Props) => {
   return (
     <nav
-      className={`${scrollY > THRESHOLD && isOpen && "bg-neutral-950/80"} ${
-        !isOpen && "opacity-0"
-      } w-full px-4 py-4 h-full transition md:hidden
-    `}
+      onClick={onClick}
+      className={`
+      fixed w-full h-full top-0 left-0 z-40
+
+      p-4 border overflow-hidden
+      ${!isOpen && "h-0 p-0"}`}
+      style={{
+        top: `${HEADER_HEIGHT}px`,
+        height: !isOpen ? 0 : `calc(100vh - ${HEADER_HEIGHT}px)`,
+        display: !isOpen ? "none" : "block",
+      }}
     >
       <ul className="flex flex-col items-end gap-4">
         {NAV_OPTIONS.map(({ label, href }) => (
           <li key={label}>
-            <Link href={href} onClick={onClick}>
-              {label}
-            </Link>
+            <Link href={href}>{label}</Link>
           </li>
         ))}
       </ul>

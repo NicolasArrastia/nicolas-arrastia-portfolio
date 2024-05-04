@@ -1,5 +1,7 @@
 export const THRESHOLD = 100;
 
+export const HEADER_HEIGHT = 47.53;
+
 export const NAV_OPTIONS = [
   {
     label: "About",
