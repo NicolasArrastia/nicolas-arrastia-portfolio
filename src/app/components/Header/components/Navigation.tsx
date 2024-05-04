@@ -23,7 +23,7 @@ const Navigation = () => {
             <motion.div
               transition={{ duration: 0.2 }}
               variants={variants}
-              className="bg-blue-500 h-1"
+              className="bg-blue-500 h-[1px]"
             />
           </motion.li>
         ))}
