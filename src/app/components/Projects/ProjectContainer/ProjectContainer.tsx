@@ -31,11 +31,12 @@ const ProjectContainer = ({ data, index }: Props) => {
             }}
           >
             <Image
-              className="object-cover h-full w-full blur group-hover:blur-0 transition duration-500"
+              className="object-cover h-full w-full blur-sm group-hover:blur-0 scale-125 group-hover:scale-100 transition duration-500"
               src={data.image}
               alt={data.title}
             />
           </motion.div>
+          {/* // TODO: add short description with github link and maybe page link, removing the whole Link component */}
           <motion.span
             variants={{
               hover: {
@@ -46,7 +47,7 @@ const ProjectContainer = ({ data, index }: Props) => {
               },
             }}
             transition={{ duration: 0.2 }}
-            className={`absolute origin-bottom-left whitespace-wrap text-8xl -bottom-3 -left-2 text-blue-300 font-semibold mix-blend-difference`}
+            className={`absolute whitespace-normal origin-bottom-left text-8xl -bottom-3 -left-2 text-blue-300 font-semibold mix-blend-difference`}
           >
             {data.title}
           </motion.span>
