@@ -1,10 +1,4 @@
 "use client";
-import {
-  CafeAndRobin,
-  GreatWaveOfKanagawa,
-  Kuma,
-  VaniAndI,
-} from "@/assets/img";
 import SectionLayout from "@/components/SectionLayout";
 import TitleText from "@/components/TitleText";
 import { motion } from "framer-motion";
@@ -23,8 +17,7 @@ const About = () => {
     <SectionLayout>
       <TitleText text="About" />
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 text-justify">
-        <div className="">
-          {/* // TODO: Add sections inside about */}
+        <div>
           <motion.p {...TEXT_TRANSITION}>
             Hi! I&apos;m <span className="text-blue-400">Nicolás Arrastía</span>
             . A young web developer, currently living in{" "}
@@ -52,8 +45,9 @@ const About = () => {
             can enjoy a good moment drinking a hot drink while being with others
             or while reading a good book. A place to visit could be a rural area
             in <span className="text-blue-400">Japan</span>. And lastly, Between
-            day or night I prefer the night, because it&apos;s quiet and I can
-            keep learning about constellations and see how the stars, weird
+            day or night I prefer <span className="text-blue-400">night</span>,
+            because it&apos;s quiet and I can keep learning about constellations
+            and see how the <span className="text-blue-400">stars</span>, weird
             mirrors of our universe, move through the sky as the time goes by.
           </motion.p>
         </div>
