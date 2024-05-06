@@ -61,17 +61,17 @@ const About = () => {
         <motion.div
           initial="initial"
           whileInView="inView"
+          viewport={{ once: true }}
           className="grid grid-cols-2 grid-rows-[repeat(2,minmax(10rem,12rem))]"
         >
           {PICTURES.map(({ alt, url, className }, index) => (
             <motion.div
               key={alt}
-              viewport={{ once: true }}
               variants={{
                 initial: { opacity: 0, filter: "blur(8px)" },
                 inView: { opacity: 1, filter: "blur(0)" },
               }}
-              transition={{ delay: 0.5 + index * 0.2, duration: 0.5 }}
+              transition={{ delay: 1.2 + index * 0.2, duration: 0.5 }}
             >
               <Image
                 className={`w-full h-full object-cover ${className}`}
