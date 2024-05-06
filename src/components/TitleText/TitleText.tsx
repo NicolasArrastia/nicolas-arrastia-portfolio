@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-type Props = { text: string; delay?: number; size?: string };
+type Props = { text: string; delay?: number; size?: "text-2xl" };
 
 const TitleText = ({ text, delay = 0.5, size }: Props) => {
   return (
