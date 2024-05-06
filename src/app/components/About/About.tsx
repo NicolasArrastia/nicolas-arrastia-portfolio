@@ -40,15 +40,16 @@ const About = () => {
           <TitleText text="Random facts about me" size="text-2xl" />
           <motion.p {...TEXT_TRANSITION}>
             My favorite color is <span className="text-blue-400">blue</span>; my
-            favorite animal is the <span className="text-blue-400">eagles</span>
-            ; I like <span className="text-blue-400">winter</span> because you
-            can enjoy a good moment drinking a hot drink while being with others
-            or while reading a good book. A place to visit could be a rural area
-            in <span className="text-blue-400">Japan</span>. And lastly, Between
-            day or night I prefer <span className="text-blue-400">night</span>,
-            because it&apos;s quiet and I can keep learning about constellations
-            and see how the <span className="text-blue-400">stars</span>, weird
-            mirrors of our universe, move through the sky as the time goes by.
+            favorite animal are <span className="text-blue-400">eagles</span>; I
+            like <span className="text-blue-400">winter</span> because you can
+            enjoy a good moment drinking a hot drink while being with others or
+            while reading a good book. A place to visit could probably be a
+            rural area in <span className="text-blue-400">Japan</span>. And
+            lastly, When choosing between day and night, I prefer{" "}
+            <span className="text-blue-400">night</span>, because it&apos;s
+            quiet and I can keep learning about constellations and see how the{" "}
+            <span className="text-blue-400">stars</span>, weird mirrors of our
+            universe, move through the sky as the time goes by.
           </motion.p>
         </div>
 
