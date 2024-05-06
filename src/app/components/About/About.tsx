@@ -8,7 +8,7 @@ import {
 import SectionLayout from "@/components/SectionLayout";
 import TitleText from "@/components/TitleText";
 import { motion } from "framer-motion";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { PICTURES } from "./constants";
 
 const TEXT_TRANSITION = {
