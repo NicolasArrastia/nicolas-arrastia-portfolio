@@ -24,24 +24,24 @@ export type SkillType = {
 };
 
 const FRONTEND_SKILLS: SkillType[] = [
-  { img: CSS, name: "CSS" },
-  { img: HTML, name: "HTML" },
-  { img: Javascript, name: "Javascript" },
-  { img: Typescript, name: "Typescript" },
   { img: React, name: "React" },
-  { img: Next, name: "Next" },
+  { img: Typescript, name: "Typescript" },
+  { img: HTML, name: "HTML" },
+  { img: CSS, name: "CSS" },
+  { img: Javascript, name: "Javascript" },
   { img: Sass, name: "Sass" },
   { img: Tailwind, name: "Tailwind" },
+  { img: Next, name: "Next" },
   { img: GraphQL, name: "GraphQl" },
 ];
 
 const BACKEND_SKILLS: SkillType[] = [{ img: Django, name: "Django" }];
 
 const OTHER_SKILLS: SkillType[] = [
-  { img: Figma, name: "Figma" },
+  { img: AzureDevOps, name: "ADO" },
   { img: Trello, name: "Trello" },
   { img: Notion, name: "Notion" },
-  { img: AzureDevOps, name: "ADO" },
+  { img: Figma, name: "Figma" },
 ];
 
 export const SKILLS: { title: string; skills: SkillType[] }[] = [
