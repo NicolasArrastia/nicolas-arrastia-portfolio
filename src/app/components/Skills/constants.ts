@@ -38,9 +38,9 @@ const FRONTEND_SKILLS: SkillType[] = [
 const BACKEND_SKILLS: SkillType[] = [{ img: Django, name: "Django" }];
 
 const OTHER_SKILLS: SkillType[] = [
-  { img: Figma, name: "Notion" },
+  { img: Figma, name: "Figma" },
   { img: Trello, name: "Trello" },
-  { img: Notion, name: "ADO" },
+  { img: Notion, name: "Notion" },
   { img: AzureDevOps, name: "ADO" },
 ];
 
