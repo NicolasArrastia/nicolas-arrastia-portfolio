@@ -6,6 +6,7 @@ import LoaderAnimation from "./components/LoaderAnimation";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
+import Skills from "./components/Skills";
 
 // TODO: Add maxHeight to prevent scroll during animation
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <Hero />
       <About />
       <Projects />
+      <Skills />
       <Footer />
     </>
   );
