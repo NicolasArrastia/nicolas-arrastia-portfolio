@@ -25,6 +25,8 @@ const Header = () => {
     };
   }, []);
 
+  console.log({ scrollY, THRESHOLD, value: scrollY > THRESHOLD });
+
   return (
     <>
       <header
@@ -34,14 +36,16 @@ const Header = () => {
      flex justify-between items-center
   w-full
    transition-colors duration-300 ${
-     scrollY > THRESHOLD
-       ? "bg-neutral-950 shadow-md shadow-neutral-50/5"
-       : "bg-transparent"
+     scrollY < THRESHOLD
+       ? "bg-transparent"
+       : "bg-neutral-950 shadow-md shadow-neutral-50/5"
    }
    
    py-2 px-4 md:px-16 text-neutral-50`}
       >
-        <Image src={NicolasLogo} width={30} alt={"nicolas arrastia logo"} />
+        <Link href={"/"}>
+          <Image src={NicolasLogo} width={30} alt={"nicolas arrastia logo"} />
+        </Link>
         <MenuIcon
           isOpen={isMenuOpen}
           handleClick={() => setIsMenuOpen((prev) => !prev)}

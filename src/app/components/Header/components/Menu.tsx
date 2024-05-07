@@ -27,7 +27,7 @@ const Menu = ({ scrollY = 0, isOpen = true, onClick }: Props) => {
       <ul className="flex flex-col items-end gap-4">
         {NAV_OPTIONS.map(({ label, href }) => (
           <li key={label}>
-            <Link href={href}>{label}</Link>
+            <Link href={`#${href}`}>{label}</Link>
           </li>
         ))}
       </ul>

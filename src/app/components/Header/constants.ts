@@ -1,22 +1,20 @@
+import { SectionIds } from "@/app/enum";
+
 export const THRESHOLD = 100;
 
 export const HEADER_HEIGHT = 47.53;
 
-export const NAV_OPTIONS = [
+export const NAV_OPTIONS: { label: string; href: SectionIds }[] = [
   {
     label: "About",
-    href: "#about",
-  },
-  {
-    label: "My Work",
-    href: "#my-work",
+    href: SectionIds.ABOUT,
   },
   {
     label: "My Projects",
-    href: "#projects",
+    href: SectionIds.PROJECTS,
   },
   {
     label: "My Skill Set",
-    href: "#skill-set",
+    href: SectionIds.SKILLS,
   },
 ];

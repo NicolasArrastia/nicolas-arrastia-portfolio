@@ -19,7 +19,7 @@ const Navigation = () => {
             key={label}
             className="px-2"
           >
-            <Link href={href}>{label}</Link>
+            <Link href={`#${href}`}>{label}</Link>
             <motion.div
               transition={{ duration: 0.2 }}
               variants={variants}
