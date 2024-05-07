@@ -59,6 +59,8 @@ const About = () => {
           whileInView="inView"
           viewport={{ once: true }}
           className="grid grid-cols-2 grid-rows-[repeat(2,minmax(10rem,12rem))]"
+          // TODO: make grid on md devices to have grid-rows-2 without images making it bigger
+          // ? Background-size:contain / bg-contain may be useful
         >
           {PICTURES.map(({ alt, url, className }, index) => (
             <motion.div
