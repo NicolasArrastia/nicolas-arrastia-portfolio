@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <div className="relative h-dvh flex justify-center items-center">
+    <div className="relative h-screen flex justify-center items-center">
       <Image
         fill
         className="object-cover"
