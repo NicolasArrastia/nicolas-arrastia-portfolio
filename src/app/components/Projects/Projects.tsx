@@ -7,10 +7,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import ProjectContainer from "./ProjectContainer";
 import { GreatWaveOfKanagawa } from "@/assets/img";
+import { SectionIds } from "@/app/enum";
 
 const Projects = () => {
   return (
-    <SectionLayout>
+    <SectionLayout id={SectionIds.PROJECTS}>
       <TitleText text={"My Projects"} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {PROJECTS.map((project, index) => (

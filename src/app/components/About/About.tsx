@@ -14,7 +14,7 @@ const TEXT_TRANSITION = {
 
 const About = () => {
   return (
-    <SectionLayout>
+    <SectionLayout id={SectionIds.ABOUT}>
       <TitleText text="About" />
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 text-justify">
         <div>
