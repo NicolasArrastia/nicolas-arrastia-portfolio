@@ -4,7 +4,7 @@ type Props = { text: string; delay?: number; size?: "text-2xl" };
 
 const TitleText = ({ text, delay = 0.5, size }: Props) => {
   return (
-    <div className="w-fit relative p-1 -left-1 mb-2 mt-6">
+    <div className="w-fit relative p-1 -left-1 mb-2 mt-8">
       <motion.h2
         className={`${size ?? "text-4xl"}`}
         transition={{ duration: 0.2, delay: delay + delay / 4 }}
