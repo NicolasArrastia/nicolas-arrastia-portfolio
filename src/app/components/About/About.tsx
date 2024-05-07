@@ -4,6 +4,7 @@ import TitleText from "@/components/TitleText";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { PICTURES } from "./constants";
+import { SectionIds } from "@/app/enum";
 
 const TEXT_TRANSITION = {
   initial: { opacity: 0 },
@@ -23,7 +24,7 @@ const About = () => {
             . A young web developer, currently living in{" "}
             <span className="text-blue-400">Mar Chiquita, Argentina</span> with
             my fiancée and our three pets. My native language is spanish, but I
-            don&apos;t have problem if speaking in english is necessary. I am
+            don&apos;t have any problem speaking in english if necessary. I am
             passionate about technology, science, languages and literature.
           </motion.p>
           <TitleText text="Why me?" size="text-2xl" />
@@ -66,7 +67,8 @@ const About = () => {
                 initial: { opacity: 0, filter: "blur(8px)" },
                 inView: { opacity: 1, filter: "blur(0)" },
               }}
-              transition={{ delay: 1.2 + index * 0.2, duration: 0.5 }}
+              transition={{ delay: 0.75 + index * 0.2, duration: 0.5 }}
+              className="overflow-hidden"
             >
               <Image
                 className={`w-full h-full object-cover ${className}`}
