@@ -1,6 +1,8 @@
 import NicolasLogo from "./nicolas-arrastia-logo.svg";
 import Github from "./github.svg";
 import LinkedIn from "./linkedin.svg";
+import Email from "./email.svg";
+import OpenEmail from "./open-email.svg";
 
 import CSS from "./skills/css.svg";
 import Django from "./skills/django.svg";
@@ -21,6 +23,8 @@ export {
   NicolasLogo,
   Github,
   LinkedIn,
+  Email,
+  OpenEmail,
   CSS,
   Django,
   HTML,
