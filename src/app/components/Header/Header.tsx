@@ -25,8 +25,6 @@ const Header = () => {
     };
   }, []);
 
-  console.log({ scrollY, THRESHOLD, value: scrollY > THRESHOLD });
-
   return (
     <>
       <header
