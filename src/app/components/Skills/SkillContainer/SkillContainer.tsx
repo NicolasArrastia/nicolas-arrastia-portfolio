@@ -18,7 +18,7 @@ const SkillContainer = ({ data }: Props) => {
       whileTap="hover"
     >
       <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 text-sm"
         variants={{
           blur: { opacity: 0, translateY: "-50%", translateX: "-50%" },
           hover: { opacity: 1, top: "0", translateY: "-100%" },
