@@ -18,6 +18,9 @@ import Trello from "./skills/trello.svg";
 import Notion from "./skills/notion.svg";
 import AzureDevOps from "./skills/azure-devops.svg";
 import GraphQL from "./skills/graphql.svg";
+import Git from "./skills/git.svg";
+import NodeJS from "./skills/node-js.svg";
+import Python from "./skills/python.svg";
 
 export {
   NicolasLogo,
@@ -39,4 +42,7 @@ export {
   Notion,
   AzureDevOps,
   GraphQL,
+  Git,
+  NodeJS,
+  Python,
 };
