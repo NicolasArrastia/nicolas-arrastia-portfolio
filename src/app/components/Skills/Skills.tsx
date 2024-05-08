@@ -13,7 +13,16 @@ const Skills = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {SKILLS.map(({ title, skills }) => (
           <div key={title}>
-            <TitleText text={title} size="text-2xl" />
+            <div className="flex relative">
+              <motion.div
+                className="absolute bottom-2 w-2 h-[2.6rem] bg-blue-500"
+                viewport={{ once: true }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1, translateY: [-20, 0] }}
+                transition={{ delay: 0.5 }}
+              />
+              <TitleText text={title} size="text-2xl" className="ml-4" />
+            </div>
             <motion.div
               initial="initial"
               whileInView="inView"
