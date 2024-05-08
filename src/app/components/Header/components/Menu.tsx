@@ -25,7 +25,7 @@ const Menu = ({ isOpen = false, onClick }: Props) => {
       }}
       onClick={onClick}
       className={`
-      fixed w-full h-full top-0 left-0 z-30
+      fixed w-full h-lvh top-0 left-0 z-30
       p-4 overflow-hidden backdrop-blur-md`}
       style={{
         paddingTop: `calc(${HEADER_HEIGHT}px + 1rem)`,
