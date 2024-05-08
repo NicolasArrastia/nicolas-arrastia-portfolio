@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { HEADER_HEIGHT, NAV_OPTIONS, THRESHOLD } from "../constants";
+import { motion } from "framer-motion";
 
 type Props = {
   scrollY: number;
@@ -9,19 +10,25 @@ type Props = {
 };
 
 // TODO: Add background here
-const Menu = ({ scrollY = 0, isOpen = true, onClick }: Props) => {
+const Menu = ({ isOpen = false, onClick }: Props) => {
   return (
-    <nav
+    <motion.nav
+      initial={{ opacity: 0 }}
+      animate={isOpen ? "open" : "closed"}
+      variants={{
+        closed: {
+          opacity: 0,
+          visibility: "hidden",
+          transition: { visibility: { delay: 0.5 } },
+        },
+        open: { opacity: 1 },
+      }}
       onClick={onClick}
       className={`
-      fixed w-full h-full top-0 left-0 z-40
-
-      p-4 border overflow-hidden
-      ${!isOpen && "h-0 p-0"}`}
+      fixed border w-full h-full top-0 left-0 z-30
+      p-4 overflow-hidden backdrop-blur-md`}
       style={{
-        top: `${HEADER_HEIGHT}px`,
-        height: !isOpen ? 0 : `calc(100vh - ${HEADER_HEIGHT}px)`,
-        display: !isOpen ? "none" : "block",
+        paddingTop: `calc(${HEADER_HEIGHT}px + 1rem)`,
       }}
     >
       <ul className="flex flex-col items-end gap-4">
@@ -31,7 +38,7 @@ const Menu = ({ scrollY = 0, isOpen = true, onClick }: Props) => {
           </li>
         ))}
       </ul>
-    </nav>
+    </motion.nav>
   );
 };
 

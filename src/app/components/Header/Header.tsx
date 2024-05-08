@@ -34,9 +34,9 @@ const Header = () => {
      flex justify-between items-center
   w-full
    transition-colors duration-300 ${
-     scrollY < THRESHOLD
-       ? "bg-transparent"
-       : "bg-neutral-950 shadow-md shadow-neutral-50/5"
+     scrollY > THRESHOLD
+       ? "bg-neutral-950 shadow-md shadow-neutral-50/5"
+       : "bg-transparent"
    }
    
    py-2 px-4 md:px-16 text-neutral-50`}
