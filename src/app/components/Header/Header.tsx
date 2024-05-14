@@ -42,7 +42,7 @@ const Header = () => {
    py-2 px-4 md:px-16 text-neutral-50`}
       >
         <Link href={"/"}>
-          <Image src={NicolasLogo} width={30} alt={"nicolas arrastia logo"} />
+          <Image src={NicolasLogo} width={35} alt={"nicolas arrastia logo"} />
         </Link>
         <MenuIcon
           isOpen={isMenuOpen}
