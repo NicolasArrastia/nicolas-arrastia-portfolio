@@ -15,7 +15,7 @@ export const PICTURES: {
   },
   {
     url: PileOfRocks,
-    alt: "My dog Café and our cat Robin",
+    alt: "Some rocks at the beach when I was chilling with my fiancée",
     className: "rotate-[-2deg] scale-[122%]",
   },
 ];
