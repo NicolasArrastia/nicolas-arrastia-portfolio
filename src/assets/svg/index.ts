@@ -3,6 +3,7 @@ import Github from "./github.svg";
 import LinkedIn from "./linkedin.svg";
 import Email from "./email.svg";
 import OpenEmail from "./open-email.svg";
+import DropdownTriangle from "./dropdown-triangle.svg";
 
 import CSS from "./skills/css.svg";
 import Django from "./skills/django.svg";
@@ -28,6 +29,7 @@ export {
   LinkedIn,
   Email,
   OpenEmail,
+  DropdownTriangle,
   CSS,
   Django,
   HTML,
