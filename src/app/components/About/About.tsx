@@ -17,7 +17,7 @@ const About = () => {
   return (
     <SectionLayout id={SectionIds.ABOUT}>
       <TitleText text="About" />
-      <div className="grid grid-cols-1 gap-16 md:grid-cols-2 text-justify">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 text-justify">
         <div>
           <motion.p {...TEXT_TRANSITION}>
             Hi! I&apos;m <span className="text-blue-400">Nicolás Arrastía</span>
