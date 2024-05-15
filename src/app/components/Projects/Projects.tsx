@@ -13,7 +13,7 @@ const Projects = () => {
   return (
     <SectionLayout id={SectionIds.PROJECTS}>
       <TitleText text={"My Projects"} />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 text-sm md:text-base md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8">
         {PROJECTS.map((project, index) => (
           <ProjectContainer index={index} data={project} key={project.title} />
         ))}
