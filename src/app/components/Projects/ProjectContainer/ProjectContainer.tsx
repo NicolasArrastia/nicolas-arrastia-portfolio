@@ -101,7 +101,7 @@ const ProjectContainer = ({ data, index }: Props) => {
             transition={{ delay: 0.8 + index * 0.2, duration: 0.4 }}
             className="w-[40px] h-[40px]"
           >
-            <InfoDropdown technologies={data.technologies} text={data.info} />
+            <InfoDropdown {...data} />
           </motion.div>
         )}
       </div>

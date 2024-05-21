@@ -2,13 +2,12 @@ import { DropdownTriangle } from "@/assets/svg";
 import SVGIcon from "@/components/SVGIcon";
 import { motion, useAnimate } from "framer-motion";
 import React from "react";
+import { ProjectData } from "../constants";
+import { StaticImageData } from "next/image";
 
-type Props = {
-  text: string;
-  technologies?: any[];
-};
+type Props = ProjectData;
 
-const InfoDropdown = ({ text, technologies }: Props) => {
+const InfoDropdown = ({ info, technologies, date }: Props) => {
   const [scope, animate] = useAnimate();
 
   return (
@@ -37,7 +36,7 @@ const InfoDropdown = ({ text, technologies }: Props) => {
           },
         }}
         transition={{ duration: 0.2 }}
-        className="absolute border bg-neutral-950 right-[0.12rem] -translate-y-full -top-5 w-64 p-4 flex flex-col gap-2"
+        className="absolute border bg-neutral-950 right-[0.12rem] -translate-y-full -top-5 w-96 p-4 flex flex-col gap-2"
       >
         <SVGIcon
           src={DropdownTriangle}
@@ -53,12 +52,19 @@ const InfoDropdown = ({ text, technologies }: Props) => {
             "bg-neutral-950 absolute bottom-0 right-0 translate-y-2/3 -translate-x-[40%]"
           }
         />
-        <span>{text}</span>
+        {date && (
+          <span className="text-neutral-400 text-sm capitalize">
+            {date
+              ?.toLocaleString("default", { month: "short", year: "2-digit" })
+              .replace(" ", " • '")}
+          </span>
+        )}
+        <span>{info}</span>
         <div className="flex justify-end gap-2">
           {technologies?.map((tech) => (
             <SVGIcon
               key={tech}
-              src={tech}
+              src={tech as unknown as StaticImageData}
               size={"20px"}
               className={"bg-neutral-50"}
             />
