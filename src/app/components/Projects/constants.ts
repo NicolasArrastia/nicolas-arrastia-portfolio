@@ -1,4 +1,10 @@
-import { BeatEmUpGame, TodoApp, JsonTable } from "@/assets/img";
+import {
+  BeatEmUpGame,
+  TodoApp,
+  JsonTable,
+  WebPortfolio,
+  Liteflix,
+} from "@/assets/img";
 import {
   Next,
   React,
@@ -22,7 +28,6 @@ export type ProjectData = {
   image?: any;
   url: string;
   github: string;
-  isIframe?: boolean;
   info: string;
   technologies: SkillsIconsEnum[];
   date?: Date;
@@ -42,7 +47,7 @@ export const PROJECTS: ProjectData[] = [
   {
     title: "Liteflix",
     url: "https://liteflix-styled.vercel.app/",
-    isIframe: true,
+    image: Liteflix,
     github: "https://github.com/NicolasArrastia/liteflix",
     info: "This was my test project to join Litebox. It was a replica of Netflix made on figma that work.",
     technologies: [SkillsIconsEnum.REACT, SkillsIconsEnum.SASS],
@@ -52,7 +57,7 @@ export const PROJECTS: ProjectData[] = [
     title: "Web Portfolio",
     url: "https://nicolas-arrastia-portfolio.vercel.app/",
     github: "https://github.com/NicolasArrastia/nicolas-arrastia-portfolio",
-    isIframe: true,
+    image: WebPortfolio,
     info: "I had to include it. It's this same portfolio.",
     technologies: [SkillsIconsEnum.NEXT, SkillsIconsEnum.TAILWIND],
     date: new Date(2024, 3),

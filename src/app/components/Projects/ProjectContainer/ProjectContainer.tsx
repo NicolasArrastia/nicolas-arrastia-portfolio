@@ -15,7 +15,7 @@ type Props = {
 const ProjectContainer = ({ data, index }: Props) => {
   return (
     <div>
-      <motion.div
+      <motion.main
         className="group relative shadow-none hover:shadow-lg shadow-neutral-50 w-full opacity-0"
         viewport={{ once: true }}
         whileInView={{ top: [-20, 0], opacity: [0, 1] }}
@@ -39,21 +39,13 @@ const ProjectContainer = ({ data, index }: Props) => {
               },
             }}
           >
-            {data.isIframe ? (
-              <iframe
-                className="absolute scale-[28%] group-hover:scale-[23%] top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 pointer-events-none w-[1980px] h-[1080px] blur-md group-hover:blur-0 transition duration-500"
-                src={data.url}
-              />
-            ) : (
-              <Image
-                className="object-cover h-full w-full blur-sm group-hover:blur-0 scale-125 group-hover:scale-100 transition duration-500"
-                src={data.image}
-                alt={data.title}
-              />
-            )}{" "}
+            <Image
+              className="object-cover h-full w-full blur-sm group-hover:blur-0 scale-125 group-hover:scale-100 transition duration-500"
+              src={data.image}
+              alt={data.title}
+            />
           </motion.div>
-          {/* // TODO: add short description with github link and maybe page link, removing the whole Link component */}
-          <motion.span
+          <motion.h3
             variants={{
               hover: {
                 opacity: 0,
@@ -66,10 +58,11 @@ const ProjectContainer = ({ data, index }: Props) => {
             className={`absolute whitespace-normal origin-bottom-left text-8xl -bottom-3 -left-2 text-blue-300 font-semibold mix-blend-difference pointer-events-none`}
           >
             {data.title}
-          </motion.span>
+          </motion.h3>
         </motion.div>
-      </motion.div>
-      <div className="flex gap-4 mt-4">
+      </motion.main>
+
+      <footer className="flex gap-4 mt-4">
         <motion.div
           viewport={{ once: true }}
           initial={{ opacity: 0, translateY: -20 }}
@@ -104,7 +97,7 @@ const ProjectContainer = ({ data, index }: Props) => {
             <InfoDropdown {...data} />
           </motion.div>
         )}
-      </div>
+      </footer>
     </div>
   );
 };

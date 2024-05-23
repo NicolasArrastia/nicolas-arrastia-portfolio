@@ -7,6 +7,8 @@ import PileOfRocks from "./pile-of-rocks.jpg";
 import TodoApp from "./projects/todo-app.jpg";
 import BeatEmUpGame from "./projects/beat_em_up_game.png";
 import JsonTable from "./projects/json-table.png";
+import WebPortfolio from "./projects/web-portfolio.png";
+import Liteflix from "./projects/liteflix.png";
 
 export {
   GreatWaveOfKanagawa,
@@ -17,4 +19,6 @@ export {
   TodoApp,
   BeatEmUpGame,
   JsonTable,
+  WebPortfolio,
+  Liteflix,
 };
