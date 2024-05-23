@@ -4,6 +4,7 @@ import LinkedIn from "./linkedin.svg";
 import Email from "./email.svg";
 import OpenEmail from "./open-email.svg";
 import DropdownTriangle from "./dropdown-triangle.svg";
+import Warning from "./warning.svg";
 
 import CSS from "./skills/css.svg";
 import Django from "./skills/django.svg";
@@ -24,12 +25,15 @@ import NodeJS from "./skills/node-js.svg";
 import Python from "./skills/python.svg";
 
 export {
+  // icons
   NicolasLogo,
   Github,
   LinkedIn,
   Email,
   OpenEmail,
   DropdownTriangle,
+  Warning,
+  // skills
   CSS,
   Django,
   HTML,

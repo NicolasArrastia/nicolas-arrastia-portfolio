@@ -1,4 +1,4 @@
-import { DropdownTriangle } from "@/assets/svg";
+import { DropdownTriangle, Warning } from "@/assets/svg";
 import SVGIcon from "@/components/SVGIcon";
 import { motion, useAnimate } from "framer-motion";
 import React from "react";
@@ -7,7 +7,20 @@ import { StaticImageData } from "next/image";
 
 type Props = ProjectData;
 
-const InfoDropdown = ({ info, technologies, date }: Props) => {
+export const IsInProgress = () => {
+  return (
+    <div className="flex items-center gap-1 size-8 w-fit">
+      <SVGIcon
+        src={Warning}
+        size={"1rem"}
+        className={"bg-orange-600 drop-shadow-md"}
+      />
+      <span className="text-orange-600 text-xs">Project in progress</span>
+    </div>
+  );
+};
+
+const InfoDropdown = ({ info, technologies, date, isInProgress }: Props) => {
   const [scope, animate] = useAnimate();
 
   return (
@@ -60,16 +73,19 @@ const InfoDropdown = ({ info, technologies, date }: Props) => {
           </span>
         )}
         <span>{info}</span>
-        <div className="flex justify-end gap-2">
-          {technologies?.map((tech) => (
-            <SVGIcon
-              key={tech}
-              src={tech as unknown as StaticImageData}
-              size={"20px"}
-              className={"bg-neutral-50"}
-            />
-          ))}
-        </div>
+        <footer className="flex justify-between items-center">
+          {isInProgress && <IsInProgress />}
+          <div className="flex justify-end gap-2 ml-auto">
+            {technologies?.map((tech) => (
+              <SVGIcon
+                key={tech}
+                src={tech as unknown as StaticImageData}
+                size={"20px"}
+                className={"bg-neutral-50"}
+              />
+            ))}
+          </div>
+        </footer>
       </motion.div>
     </motion.div>
   );
