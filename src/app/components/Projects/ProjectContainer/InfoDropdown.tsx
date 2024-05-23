@@ -1,7 +1,7 @@
 import { DropdownTriangle, Warning } from "@/assets/svg";
 import SVGIcon from "@/components/SVGIcon";
-import { motion, useAnimate } from "framer-motion";
-import React from "react";
+import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import { ProjectData } from "../constants";
 import { StaticImageData } from "next/image";
 
@@ -21,17 +21,26 @@ export const IsInProgress = () => {
 };
 
 const InfoDropdown = ({ info, technologies, date, isInProgress }: Props) => {
-  const [scope, animate] = useAnimate();
+  const [formattedDate, setFormattedDate] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (date) {
+      const dateObj = typeof date === "string" ? new Date(date) : date;
+      if (!isNaN(dateObj.getTime())) {
+        const formatted = dateObj
+          .toLocaleString("default", { month: "short", year: "2-digit" })
+          .replace(" ", " • '");
+        setFormattedDate(formatted);
+      }
+    }
+  }, [date]);
 
   return (
     <motion.div
       whileHover="open"
       whileTap="open"
       initial="closed"
-      // initial="open"
-      onHoverEnd={() => animate("", "closed")}
       className="relative border h-full aspect-square flex justify-center items-center cursor-pointer"
-      ref={scope}
     >
       <span aria-hidden="true" className="font-mono text-lg">
         i
@@ -49,7 +58,7 @@ const InfoDropdown = ({ info, technologies, date, isInProgress }: Props) => {
           },
         }}
         transition={{ duration: 0.2 }}
-        className="absolute border bg-neutral-950 right-[0.12rem] -translate-y-full -top-5 w-96 p-4 flex flex-col gap-2"
+        className="absolute border bg-neutral-950 right-[0.12rem] -translate-y-full -top-5 w-96 p-4 flex flex-col gap-2 font-sans text-base"
       >
         <SVGIcon
           src={DropdownTriangle}
@@ -65,20 +74,18 @@ const InfoDropdown = ({ info, technologies, date, isInProgress }: Props) => {
             "bg-neutral-950 absolute bottom-0 right-0 translate-y-2/3 -translate-x-[40%]"
           }
         />
-        {date && (
+        {formattedDate && (
           <span className="text-neutral-400 text-sm capitalize">
-            {date
-              ?.toLocaleString("default", { month: "short", year: "2-digit" })
-              .replace(" ", " • '")}
+            {formattedDate}
           </span>
         )}
         <span>{info}</span>
         <footer className="flex justify-between items-center">
           {isInProgress && <IsInProgress />}
           <div className="flex justify-end gap-2 ml-auto">
-            {technologies?.map((tech) => (
+            {technologies?.map((tech, index) => (
               <SVGIcon
-                key={tech}
+                key={index}
                 src={tech as unknown as StaticImageData}
                 size={"20px"}
                 className={"bg-neutral-50"}

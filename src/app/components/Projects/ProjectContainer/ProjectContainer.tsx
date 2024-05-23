@@ -13,6 +13,8 @@ type Props = {
 };
 
 const ProjectContainer = ({ data, index }: Props) => {
+  const { image, title, github, url, info } = data;
+
   return (
     <div>
       <motion.main
@@ -27,11 +29,6 @@ const ProjectContainer = ({ data, index }: Props) => {
           className="relative bg-neutral-400 aspect-video overflow-hidden"
         >
           <motion.div
-            initial={
-              {
-                // filter: "blur(8px)",
-              }
-            }
             className="h-full w-full"
             variants={{
               hover: {
@@ -41,8 +38,8 @@ const ProjectContainer = ({ data, index }: Props) => {
           >
             <Image
               className="object-cover h-full w-full blur-sm group-hover:blur-0 scale-125 group-hover:scale-100 transition duration-500"
-              src={data.image}
-              alt={data.title}
+              src={image}
+              alt={title}
             />
           </motion.div>
           <motion.h3
@@ -57,7 +54,7 @@ const ProjectContainer = ({ data, index }: Props) => {
             transition={{ duration: 0.2 }}
             className={`absolute whitespace-normal origin-bottom-left text-8xl -bottom-3 -left-2 text-blue-300 font-semibold mix-blend-difference pointer-events-none`}
           >
-            {data.title}
+            {title}
           </motion.h3>
         </motion.div>
       </motion.main>
@@ -70,7 +67,7 @@ const ProjectContainer = ({ data, index }: Props) => {
           transition={{ delay: 0.4 + index * 0.2, duration: 0.4 }}
           className="w-full"
         >
-          <ButtonLink url={data.github}>
+          <ButtonLink url={github}>
             <SVGIcon src={Github} size={"20px"} className={"bg-white mr-2"} />
             Github
           </ButtonLink>
@@ -82,11 +79,11 @@ const ProjectContainer = ({ data, index }: Props) => {
           transition={{ delay: 0.6 + index * 0.2, duration: 0.4 }}
           className="w-full"
         >
-          <ButtonLink type="secondary" url={data.url}>
+          <ButtonLink type="secondary" url={url}>
             <span className="text-nowrap">Live Demo</span>
           </ButtonLink>
         </motion.div>
-        {data.info && (
+        {info && (
           <motion.div
             viewport={{ once: true }}
             initial={{ opacity: 0, translateY: -20 }}
