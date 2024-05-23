@@ -3,10 +3,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { NAV_OPTIONS, THRESHOLD } from "./constants";
+import { THRESHOLD } from "./constants";
 import MenuIcon from "./components/MenuIcon";
 import { NicolasLogo } from "@/assets/svg";
-import { useScroll } from "framer-motion";
 import Menu from "./components/Menu";
 import Navigation from "./components/Navigation";
 
@@ -28,18 +27,11 @@ const Header = () => {
   return (
     <>
       <header
-        className={`z-40
-        fixed
-        text-neutral-50
-     flex justify-between items-center
-  w-full
-   transition-colors duration-300 ${
-     scrollY > THRESHOLD
-       ? "bg-neutral-950 shadow-md shadow-neutral-50/5"
-       : "bg-transparent"
-   }
-   
-   py-2 px-4 md:px-16 text-neutral-50`}
+        className={`z-40 fixed text-neutral-50 flex justify-between items-center w-full transition-colors duration-300 ${
+          scrollY > THRESHOLD
+            ? "bg-neutral-950 shadow-md shadow-neutral-50/5"
+            : "bg-transparent"
+        } py-2 px-4 md:px-16 text-neutral-50`}
       >
         <Link href={"/"}>
           <Image src={NicolasLogo} width={35} alt={"nicolas arrastia logo"} />
