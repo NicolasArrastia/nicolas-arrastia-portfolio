@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -8,16 +6,19 @@ import MenuIcon from "./components/MenuIcon";
 import { NicolasLogo } from "@/assets/svg";
 import Menu from "./components/Menu";
 import Navigation from "./components/Navigation";
+import { NextPageContext } from "next";
 
-const Header = () => {
-  const isClient = typeof window === "object";
-  const [scrollY, setScrollY] = useState(isClient ? window.scrollY ?? 0 : 0);
+interface HeaderProps {
+  initialScrollY: number;
+}
 
+const Header = ({ initialScrollY }: HeaderProps) => {
+  const [scrollY, setScrollY] = useState(initialScrollY ?? 0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
+  const handleScroll = () => setScrollY(window.scrollY);
 
+  useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -49,6 +50,14 @@ const Header = () => {
       />
     </>
   );
+};
+
+Header.getInitialProps = async ({ req }: NextPageContext) => {
+  const initialScrollY =
+    req && typeof req.headers["scroll-y"] === "string"
+      ? req.headers["scroll-y"]
+      : "0";
+  return { initialScrollY: parseInt(initialScrollY, 10) || 0 };
 };
 
 export default Header;
