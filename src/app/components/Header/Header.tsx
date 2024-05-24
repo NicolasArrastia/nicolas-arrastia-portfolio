@@ -8,12 +8,15 @@ import Menu from "./components/Menu";
 import Navigation from "./components/Navigation";
 import { NextPageContext } from "next";
 
-interface HeaderProps {
-  initialScrollY: number;
-}
+const Header = () => {
+  const [scrollY, setScrollY] = useState(0);
 
-const Header = ({ initialScrollY }: HeaderProps) => {
-  const [scrollY, setScrollY] = useState(initialScrollY ?? 0);
+  useEffect(() => {
+    const isClient = typeof window === "object";
+    const initialScrollY = isClient ? window.scrollY : 0;
+    setScrollY(initialScrollY);
+  }, []);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleScroll = () => setScrollY(window.scrollY);
@@ -50,14 +53,6 @@ const Header = ({ initialScrollY }: HeaderProps) => {
       />
     </>
   );
-};
-
-Header.getInitialProps = async ({ req }: NextPageContext) => {
-  const initialScrollY =
-    req && typeof req.headers["scroll-y"] === "string"
-      ? req.headers["scroll-y"]
-      : "0";
-  return { initialScrollY: parseInt(initialScrollY, 10) || 0 };
 };
 
 export default Header;
