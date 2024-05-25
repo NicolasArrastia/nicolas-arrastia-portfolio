@@ -22,13 +22,12 @@ import { StaticImageData } from "next/image";
 export type SkillType = {
   img: StaticImageData;
   name: string;
-  isLearning?: boolean;
-  isOpenToLearn?: boolean;
+  hasStar?: boolean;
 };
 
 const FRONTEND_SKILLS: SkillType[] = [
-  { img: React, name: "React" },
-  { img: Typescript, name: "Typescript" },
+  { img: React, name: "React", hasStar: true },
+  { img: Typescript, name: "Typescript", hasStar: true },
   { img: HTML, name: "HTML" },
   { img: CSS, name: "CSS" },
   { img: Javascript, name: "Javascript" },

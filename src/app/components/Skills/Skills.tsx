@@ -48,6 +48,10 @@ const Skills = () => {
           </div>
         ))}
       </div>
+
+      <span className="text-neutral-500 w-full text-center block mt-24">
+        And always open to and currently learning more
+      </span>
     </SectionLayout>
   );
 };

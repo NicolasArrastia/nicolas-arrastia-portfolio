@@ -5,6 +5,7 @@ import Email from "./email.svg";
 import OpenEmail from "./open-email.svg";
 import DropdownTriangle from "./dropdown-triangle.svg";
 import Warning from "./warning.svg";
+import Star from "./star.svg";
 
 import CSS from "./skills/css.svg";
 import Django from "./skills/django.svg";
@@ -33,6 +34,7 @@ export {
   OpenEmail,
   DropdownTriangle,
   Warning,
+  Star,
   // skills
   CSS,
   Django,
