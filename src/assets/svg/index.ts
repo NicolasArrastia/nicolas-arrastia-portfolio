@@ -24,6 +24,7 @@ import GraphQL from "./skills/graphql.svg";
 import Git from "./skills/git.svg";
 import NodeJS from "./skills/node-js.svg";
 import Python from "./skills/python.svg";
+import Vue from "./skills/vue.svg";
 
 export {
   // icons
@@ -36,6 +37,7 @@ export {
   Warning,
   Star,
   // skills
+  Vue,
   CSS,
   Django,
   HTML,

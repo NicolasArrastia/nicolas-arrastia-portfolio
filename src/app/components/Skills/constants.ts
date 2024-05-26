@@ -16,6 +16,7 @@ import {
   Git,
   NodeJS,
   Python,
+  Vue,
 } from "@/assets/svg";
 import { StaticImageData } from "next/image";
 
@@ -35,6 +36,7 @@ const FRONTEND_SKILLS: SkillType[] = [
   { img: Tailwind, name: "Tailwind" },
   { img: Next, name: "Next" },
   { img: GraphQL, name: "GraphQl" },
+  { img: Vue, name: "Vue" },
 ];
 
 const BACKEND_SKILLS: SkillType[] = [
