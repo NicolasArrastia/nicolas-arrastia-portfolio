@@ -40,11 +40,16 @@ const InfoDropdown = ({ info, technologies, date, isInProgress }: Props) => {
       whileHover="open"
       whileTap="open"
       initial="closed"
-      className="relative border h-full aspect-square flex justify-center items-center cursor-pointer"
+      className="group relative border size-10"
     >
-      <span aria-hidden="true" className="font-mono text-lg">
+      <div className="absolute transition-all size-full top-0 left-0 border group-hover:top-2 group-hover:left-2 pointer-events-none" />
+      <span
+        aria-hidden="true"
+        className="relative font-mono text-lg bg-neutral-950 flex justify-center items-center cursor-pointer size-full"
+      >
         i
       </span>
+
       <motion.div
         variants={{
           open: {
