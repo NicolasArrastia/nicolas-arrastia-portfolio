@@ -17,23 +17,34 @@ import {
   NodeJS,
   Python,
   Vue,
+  Star,
+  Heart,
 } from "@/assets/svg";
 import { StaticImageData } from "next/image";
 
 export type SkillType = {
   img: StaticImageData;
   name: string;
-  hasStar?: boolean;
+  miniIcons?: { src: StaticImageData; className: string }[];
+};
+
+const MiniIcons = {
+  STARRED: { src: Star, className: "bg-yellow-500" },
+  FAVORITE: { src: Heart, className: "bg-pink-500" },
 };
 
 const FRONTEND_SKILLS: SkillType[] = [
-  { img: React, name: "React", hasStar: true },
-  { img: Typescript, name: "Typescript", hasStar: true },
+  { img: React, name: "React", miniIcons: [MiniIcons.STARRED] },
+  {
+    img: Typescript,
+    name: "Typescript",
+    miniIcons: [MiniIcons.STARRED],
+  },
   { img: HTML, name: "HTML" },
   { img: CSS, name: "CSS" },
   { img: Javascript, name: "Javascript" },
   { img: Sass, name: "Sass" },
-  { img: Tailwind, name: "Tailwind" },
+  { img: Tailwind, name: "Tailwind", miniIcons: [MiniIcons.FAVORITE] },
   { img: Next, name: "Next" },
   { img: GraphQL, name: "GraphQl" },
   { img: Vue, name: "Vue" },
@@ -48,9 +59,9 @@ const OTHER_SKILLS: SkillType[] = [
   { img: Git, name: "Git" },
   { img: AzureDevOps, name: "ADO" },
   { img: Trello, name: "Trello" },
-  { img: Notion, name: "Notion" },
+  { img: Notion, name: "Notion", miniIcons: [MiniIcons.STARRED] },
   { img: Figma, name: "Figma" },
-  { img: Python, name: "Python" },
+  { img: Python, name: "Python", miniIcons: [MiniIcons.FAVORITE] },
 ];
 
 export const SKILLS: { title: string; skills: SkillType[] }[] = [

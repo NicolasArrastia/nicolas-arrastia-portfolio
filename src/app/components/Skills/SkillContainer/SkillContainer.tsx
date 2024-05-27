@@ -1,7 +1,6 @@
 import SVGIcon from "@/components/SVGIcon";
 import { motion } from "framer-motion";
 import { SkillType } from "../constants";
-import { Star } from "@/assets/svg";
 
 type Props = {
   data: SkillType;
@@ -36,12 +35,18 @@ const SkillContainer = ({ data }: Props) => {
         className="relative"
       >
         <SVGIcon src={img} size={"50px"} className={"bg-neutral-200"} />
-        {data.hasStar && (
-          <SVGIcon
-            src={Star}
-            size="20px"
-            className="bg-yellow-400 absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2"
-          />
+
+        {data.miniIcons && (
+          <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-[10px] flex">
+            {data.miniIcons?.map(({ src, className }, index) => (
+              <SVGIcon
+                key={index}
+                src={src}
+                size="20px"
+                className={` ${className}`}
+              />
+            ))}
+          </div>
         )}
       </motion.div>
     </motion.div>
