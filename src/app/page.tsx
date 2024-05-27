@@ -7,11 +7,13 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import Skills from "./components/Skills";
+import { Analytics } from "@vercel/analytics/react";
 
 // TODO: Add maxHeight to prevent scroll during animation
 export default function Home() {
   return (
     <>
+      <Analytics />
       <LoaderAnimation />
       <Header />
       <Hero />
