@@ -12,6 +12,7 @@ import {
   Tailwind,
   HTML as HTML5,
   Javascript,
+  Typescript,
 } from "@/assets/svg";
 
 enum SkillsIconsEnum {
@@ -21,6 +22,7 @@ enum SkillsIconsEnum {
   SASS = Sass,
   HTML = HTML5,
   JAVASCRIPT = Javascript,
+  TYPESCRIPT = Typescript,
 }
 
 export type ProjectData = {
@@ -77,7 +79,11 @@ export const PROJECTS: ProjectData[] = [
     github: "https://github.com/NicolasArrastia/json-table",
     info: "This is a project that I am doing for visualizing json arrays in a table, to filter and search for specific data. I started making this when starting doing web scraping projects with selenium.",
     image: JsonTable,
-    technologies: [SkillsIconsEnum.NEXT, SkillsIconsEnum.TAILWIND],
+    technologies: [
+      SkillsIconsEnum.NEXT,
+      SkillsIconsEnum.TAILWIND,
+      SkillsIconsEnum.TYPESCRIPT,
+    ],
     date: new Date(2023, 4),
     isInProgress: true,
   },
