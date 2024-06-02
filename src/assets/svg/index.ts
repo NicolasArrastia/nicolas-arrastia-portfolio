@@ -26,6 +26,8 @@ import Git from "./skills/git.svg";
 import NodeJS from "./skills/node-js.svg";
 import Python from "./skills/python.svg";
 import Vue from "./skills/vue.svg";
+import PHP from "./skills/php.svg";
+import Redux from "./skills/redux.svg";
 
 export {
   // icons
@@ -57,4 +59,6 @@ export {
   Git,
   NodeJS,
   Python,
+  PHP,
+  Redux,
 };

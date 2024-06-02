@@ -19,6 +19,8 @@ import {
   Vue,
   Star,
   Heart,
+  PHP,
+  Redux,
 } from "@/assets/svg";
 import { StaticImageData } from "next/image";
 
@@ -46,7 +48,7 @@ const FRONTEND_SKILLS: SkillType[] = [
   { img: Sass, name: "Sass" },
   { img: Tailwind, name: "Tailwind", miniIcons: [MiniIcons.FAVORITE] },
   { img: Next, name: "Next" },
-  { img: GraphQL, name: "GraphQl" },
+  // { img: GraphQL, name: "GraphQl" },
   { img: Vue, name: "Vue" },
 ];
 
@@ -64,8 +66,15 @@ const OTHER_SKILLS: SkillType[] = [
   { img: Python, name: "Python", miniIcons: [MiniIcons.FAVORITE] },
 ];
 
+const LEARNING_SKILLS: SkillType[] = [
+  { img: Redux, name: "Redux" },
+  { img: PHP, name: "PHP" },
+  { img: React, name: "React Native" },
+];
+
 export const SKILLS: { title: string; skills: SkillType[] }[] = [
   { title: "Frontend", skills: FRONTEND_SKILLS },
   { title: "Backend", skills: BACKEND_SKILLS },
   { title: "Others", skills: OTHER_SKILLS },
+  { title: "Learning", skills: LEARNING_SKILLS },
 ];
