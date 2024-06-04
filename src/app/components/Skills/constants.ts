@@ -21,6 +21,7 @@ import {
   Heart,
   PHP,
   Redux,
+  Scrum,
 } from "@/assets/svg";
 import { StaticImageData } from "next/image";
 
@@ -64,6 +65,7 @@ const OTHER_SKILLS: SkillType[] = [
   { img: Notion, name: "Notion", miniIcons: [MiniIcons.STARRED] },
   { img: Figma, name: "Figma" },
   { img: Python, name: "Python", miniIcons: [MiniIcons.FAVORITE] },
+  { img: Scrum, name: "SCRUM" },
 ];
 
 const LEARNING_SKILLS: SkillType[] = [

@@ -28,6 +28,7 @@ import Python from "./skills/python.svg";
 import Vue from "./skills/vue.svg";
 import PHP from "./skills/php.svg";
 import Redux from "./skills/redux.svg";
+import Scrum from "./skills/scrum.svg";
 
 export {
   // icons
@@ -61,4 +62,5 @@ export {
   Python,
   PHP,
   Redux,
+  Scrum,
 };
