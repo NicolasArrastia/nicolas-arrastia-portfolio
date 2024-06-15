@@ -12,7 +12,7 @@ const SVGIcon = ({ src, size, className }: Props) => {
       className={className}
       style={{
         maskImage: `url(${src.src})`,
-        maskSize: size,
+        maskSize: "100%",
 
         backgroundPosition: "center",
         backgroundSize: "cover",
