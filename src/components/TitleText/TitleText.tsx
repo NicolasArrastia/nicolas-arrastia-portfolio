@@ -3,15 +3,22 @@ import { motion } from "framer-motion";
 type Props = {
   text: string;
   delay?: number;
-  size?: "text-2xl";
+  size?: string;
   className?: string;
 };
 
-const TitleText = ({ text, delay = 0.5, size, className }: Props) => {
+// TODO: Make common component with VerticalTextEffect component
+const TitleText = ({
+  text,
+  delay = 0.5,
+  size = "text-4xl",
+  className,
+}: Props) => {
   return (
-    <div className={`w-fit relative p-1 -left-1 mb-2 mt-8 ${className}`}>
+    <div
+      className={`${className} ${size} w-fit relative p-1 -left-1 mb-2 mt-8 text-4xl`}
+    >
       <motion.h2
-        className={`${size ?? "text-4xl"}`}
         transition={{ duration: 0.2, delay: delay + delay / 4 }}
         viewport={{ once: true }}
         initial={{ opacity: 0 }}
