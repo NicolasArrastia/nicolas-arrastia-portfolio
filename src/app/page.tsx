@@ -8,6 +8,8 @@ import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import Skills from "./components/Skills";
 import { Analytics } from "@vercel/analytics/react";
+import Contact from "./components/Contact";
+import Experience from "./components/Experience";
 
 // TODO: Add maxHeight to prevent scroll during animation
 export default function Home() {
@@ -18,8 +20,10 @@ export default function Home() {
       <Header />
       <Hero />
       <About />
-      <Projects />
       <Skills />
+      <Projects />
+      {/* <Contact /> */}
+      <Experience />
       <Footer />
     </>
   );

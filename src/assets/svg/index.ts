@@ -7,6 +7,7 @@ import DropdownTriangle from "./dropdown-triangle.svg";
 import Warning from "./warning.svg";
 import Star from "./star.svg";
 import Heart from "./heart.svg";
+import Copy from "./copy.svg";
 
 import CSS from "./skills/css.svg";
 import Django from "./skills/django.svg";
@@ -29,6 +30,7 @@ import Vue from "./skills/vue.svg";
 import PHP from "./skills/php.svg";
 import Redux from "./skills/redux.svg";
 import Scrum from "./skills/scrum.svg";
+import SQL from "./skills/sql.svg";
 
 export {
   // icons
@@ -41,6 +43,7 @@ export {
   Warning,
   Star,
   Heart,
+  Copy,
   // skills
   Vue,
   CSS,
@@ -63,4 +66,5 @@ export {
   PHP,
   Redux,
   Scrum,
+  SQL,
 };
