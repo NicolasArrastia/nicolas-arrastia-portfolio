@@ -17,7 +17,7 @@ const About = () => {
   return (
     <SectionLayout id={SectionIds.ABOUT}>
       <TitleText text="About" />
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 text-justify">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 hyphens-auto">
         <div>
           <motion.p {...TEXT_TRANSITION}>
             Hi! I&apos;m <span className="text-blue-400">Nicolás Arrastía</span>
@@ -27,7 +27,7 @@ const About = () => {
             don&apos;t have any problem speaking in english if necessary. I am
             passionate about technology, science, languages and literature.
           </motion.p>
-          <TitleText text="Why me?" size="text-2xl" />
+          <TitleText text="Why me?" className="!text-2xl" />
           <motion.p {...TEXT_TRANSITION}>
             Because I am <span className="text-blue-400">respectful</span>,{" "}
             <span className="text-blue-400">curious</span> and{" "}
@@ -38,7 +38,7 @@ const About = () => {
             that&apos;s why I took a course in ux/ui design to potentiate my
             frontend skills with it.
           </motion.p>
-          <TitleText text="Random facts about me" size="text-2xl" />
+          <TitleText text="Random facts about me" className="text-2xl" />
           <motion.p {...TEXT_TRANSITION}>
             My favorite color is <span className="text-blue-400">blue</span>; my
             favorite animal are <span className="text-blue-400">eagles</span>; I
