@@ -28,20 +28,13 @@ const ProjectContainer = ({ data, index }: Props) => {
           whileHover={"hover"}
           className="relative bg-neutral-400 aspect-video overflow-hidden"
         >
-          <motion.div
-            className="h-full w-full"
-            variants={{
-              hover: {
-                width: "100%", // TODO: Add info on the side and make this width 50%
-              },
-            }}
-          >
+          <div className="h-full w-full">
             <Image
               className="object-cover h-full w-full blur-sm group-hover:blur-0 scale-125 group-hover:scale-100 transition duration-500"
               src={image}
               alt={title}
             />
-          </motion.div>
+          </div>
           <motion.h3
             variants={{
               hover: {
