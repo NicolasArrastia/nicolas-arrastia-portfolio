@@ -17,4 +17,12 @@ export const NAV_OPTIONS: { label: string; href: SectionIds }[] = [
     label: "My Skill Set",
     href: SectionIds.SKILLS,
   },
+  {
+    label: "Contact",
+    href: SectionIds.CONTACT,
+  },
+  {
+    label: "Experience",
+    href: SectionIds.EXPERIENCE,
+  },
 ];

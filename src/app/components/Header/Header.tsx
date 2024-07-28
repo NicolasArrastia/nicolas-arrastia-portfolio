@@ -6,7 +6,6 @@ import MenuIcon from "./components/MenuIcon";
 import { NicolasLogo } from "@/assets/svg";
 import Menu from "./components/Menu";
 import Navigation from "./components/Navigation";
-import { NextPageContext } from "next";
 
 const Header = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -31,20 +30,22 @@ const Header = () => {
   return (
     <>
       <header
-        className={`z-40 fixed text-neutral-50 flex justify-between items-center w-full transition-colors duration-300 ${
+        className={`z-40 fixed text-neutral-50  w-full transition-colors duration-300 ${
           scrollY > THRESHOLD
             ? "bg-neutral-950 shadow-md shadow-neutral-50/5"
             : "bg-transparent"
-        } py-2 px-4 md:px-16 text-neutral-50`}
+        }  text-neutral-50`}
       >
-        <Link href={"/"}>
-          <Image src={NicolasLogo} width={35} alt={"nicolas arrastia logo"} />
-        </Link>
-        <MenuIcon
-          isOpen={isMenuOpen}
-          handleClick={() => setIsMenuOpen((prev) => !prev)}
-        />
-        <Navigation />
+        <div className="max-w-screen-2xl m-auto py-2 px-4 md:px-16 flex justify-between items-center">
+          <Link href={"/"}>
+            <Image src={NicolasLogo} width={35} alt={"nicolas arrastia logo"} />
+          </Link>
+          <MenuIcon
+            isOpen={isMenuOpen}
+            handleClick={() => setIsMenuOpen((prev) => !prev)}
+          />
+          <Navigation />
+        </div>
       </header>
       <Menu
         onClick={() => setIsMenuOpen((prev) => !prev)}
