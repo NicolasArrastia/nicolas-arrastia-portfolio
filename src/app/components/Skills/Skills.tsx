@@ -21,7 +21,7 @@ const Skills = () => {
                 whileInView={{ opacity: 1, translateY: [-20, 0] }}
                 transition={{ delay: 0.5 }}
               />
-              <TitleText text={title} size="text-2xl" className="ml-4" />
+              <TitleText text={title} className="ml-4 !text-2xl" />
             </div>
             <motion.div
               initial="initial"
@@ -49,7 +49,7 @@ const Skills = () => {
         ))}
       </div>
 
-      <span className="text-neutral-500 w-full text-center block mt-16">
+      <span className="text-neutral-500 w-full text-center block mt-8">
         Currently learning and always open to learn more
       </span>
     </SectionLayout>
