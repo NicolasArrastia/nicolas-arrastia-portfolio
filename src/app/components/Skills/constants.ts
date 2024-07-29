@@ -22,6 +22,7 @@ import {
   PHP,
   Redux,
   Scrum,
+  SQL,
 } from "@/assets/svg";
 import { StaticImageData } from "next/image";
 
@@ -56,6 +57,7 @@ const FRONTEND_SKILLS: SkillType[] = [
 const BACKEND_SKILLS: SkillType[] = [
   { img: Django, name: "Django" },
   { img: NodeJS, name: "NodeJS" },
+  { img: SQL, name: "SQL" },
 ];
 
 const OTHER_SKILLS: SkillType[] = [
@@ -71,7 +73,7 @@ const OTHER_SKILLS: SkillType[] = [
 const LEARNING_SKILLS: SkillType[] = [
   { img: Redux, name: "Redux" },
   { img: PHP, name: "PHP" },
-  { img: React, name: "React Native" },
+  // { img: React, name: "React Native" },
 ];
 
 export const SKILLS: { title: string; skills: SkillType[] }[] = [
