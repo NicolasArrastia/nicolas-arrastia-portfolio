@@ -65,7 +65,7 @@ export const PROJECTS: ProjectData[] = [
     date: new Date(2024, 3),
   },
   {
-    title: "Beat em Up Game",
+    title: "Canvas Game",
     url: "https://canvas-beat-em-up-game.vercel.app/",
     github: "https://github.com/NicolasArrastia/canvas-beat-em-up-game",
     info: "This was my first attempt of a game made with vanilla javascript. It was very fun. It's far from perfect, the enemies are not very smart, but I'd do it again for sure.",
