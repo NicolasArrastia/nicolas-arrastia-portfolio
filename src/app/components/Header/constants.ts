@@ -18,10 +18,10 @@ export const NAV_OPTIONS: { label: HeaderSections; href: SectionIds }[] = [
     label: HeaderSections.SKILLS,
     href: SectionIds.SKILLS,
   },
-  {
-    label: HeaderSections.CONTACT,
-    href: SectionIds.CONTACT,
-  },
+  // {
+  //   label: HeaderSections.CONTACT,
+  //   href: SectionIds.CONTACT,
+  // },
   {
     label: HeaderSections.EXPERIENCE,
     href: SectionIds.EXPERIENCE,
