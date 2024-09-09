@@ -70,6 +70,9 @@
       "title": "My Projects",
       "demo_button": "Live Demo",
       "in_progress": "Project in progress"
+    },
+    "contact": {
+      "title": "Contact Me"
     }
   },
   "es": {
@@ -143,6 +146,9 @@
       "title": "Mis Proyectos",
       "demo_button": "Demo",
       "in_progress": "Proyecto en progreso"
+    },
+    "contact": {
+      "title": "Contactame"
     }
   }
 }
