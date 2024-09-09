@@ -1,6 +1,7 @@
 import { ArFlag, UsFlag } from "@/assets/svg";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Languages } from "@/lang";
+import { motion } from "framer-motion";
 import React from "react";
 
 const LANG_ICON: Record<Languages, object> = {
@@ -16,13 +17,22 @@ const LanguageButton = () => {
   };
 
   return (
-    <div className="cursor-pointer">
-      <img
-        onClick={handleSwitchLanguage}
-        src={(LANG_ICON[language] as { src: string }).src}
-        width="35rem"
-      />
-    </div>
+    <motion.div
+      className="cursor-pointer"
+      onClick={handleSwitchLanguage}
+      whileTap="tap"
+      variants={{
+        tap: {
+          rotate: 360,
+          scale: 0.9,
+          transition: {
+            duration: 0.2,
+          },
+        },
+      }}
+    >
+      <img src={(LANG_ICON[language] as { src: string }).src} width="35rem" />
+    </motion.div>
   );
 };
 
