@@ -5,6 +5,6 @@ export enum Languages {
   EN = "en",
 }
 
-type LanguageJsonType = Record<Languages, any>; // todo implement this type
+type LanguageJsonType = Record<Languages, any>; // todo develop more this type
 
-export default lang;
+export default lang as LanguageJsonType;
