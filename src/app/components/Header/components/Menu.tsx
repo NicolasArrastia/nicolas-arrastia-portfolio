@@ -2,6 +2,8 @@
 import Link from "next/link";
 import { HEADER_HEIGHT, NAV_OPTIONS, THRESHOLD } from "../constants";
 import { motion } from "framer-motion";
+import lang from "@/lang";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type Props = {
   scrollY: number;
@@ -11,6 +13,8 @@ type Props = {
 
 // TODO: Add background here
 const Menu = ({ isOpen = false, onClick }: Props) => {
+  const { language } = useLanguage();
+
   return (
     <motion.nav
       initial={{ opacity: 0 }}
