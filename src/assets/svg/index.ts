@@ -8,6 +8,8 @@ import Warning from "./warning.svg";
 import Star from "./star.svg";
 import Heart from "./heart.svg";
 import Copy from "./copy.svg";
+import UsFlag from "./us-flag.svg";
+import ArFlag from "./ar-flag.svg";
 
 import CSS from "./skills/css.svg";
 import Django from "./skills/django.svg";
@@ -44,6 +46,8 @@ export {
   Star,
   Heart,
   Copy,
+  UsFlag,
+  ArFlag,
   // skills
   Vue,
   CSS,
