@@ -24,6 +24,7 @@ import {
   Scrum,
   SQL,
 } from "@/assets/svg";
+import { Languages } from "@/lang";
 import { StaticImageData } from "next/image";
 
 export type SkillType = {
@@ -76,9 +77,12 @@ const LEARNING_SKILLS: SkillType[] = [
   // { img: React, name: "React Native" },
 ];
 
-export const SKILLS: { title: string; skills: SkillType[] }[] = [
-  { title: "Frontend", skills: FRONTEND_SKILLS },
-  { title: "Backend", skills: BACKEND_SKILLS },
-  { title: "Others", skills: OTHER_SKILLS },
-  { title: "Learning", skills: LEARNING_SKILLS },
+export const SKILLS: {
+  title: Record<Languages, string>;
+  skills: SkillType[];
+}[] = [
+  { title: { en: "Frontend", es: "Frontend" }, skills: FRONTEND_SKILLS },
+  { title: { en: "Backend", es: "Backend" }, skills: BACKEND_SKILLS },
+  { title: { en: "Others", es: "Otros" }, skills: OTHER_SKILLS },
+  { title: { en: "Learning", es: "Aprendiendo" }, skills: LEARNING_SKILLS },
 ];

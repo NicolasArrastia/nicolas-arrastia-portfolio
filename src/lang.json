@@ -1,0 +1,148 @@
+{
+  "en": {
+    "header": {
+      "about": "About",
+      "projects": "My Projects",
+      "skills": "My Skill Set",
+      "contact": "Contact",
+      "experience": "Experience"
+    },
+    "hero": {
+      "title": [
+        "Hi there!",
+        "I'm",
+        "Nico",
+        "Web Developer"
+      ]
+    },
+    "about": {
+      "introduction": {
+        "title": "About",
+        "description": [
+          "Hi! I'm",
+          " Nicolás Arrastía ",
+          ". A young web developer, currently living in",
+          " Mar Chiquita, Argentina ",
+          "with my fiancée and our three pets. My native language is spanish, but I don't have any problem speaking in english if necessary. I am passionate about technology, science, languages and literature."
+        ]
+      },
+      "why_me": {
+        "title": "Why me?",
+        "description": [
+          "Because I am",
+          " respectful",
+          ", ",
+          "curious ",
+          ", ",
+          "friendly ",
+          "and I love solving problems for other people to make their life easier; I enjoy learning new things and I try to understand how things work. Also, I have an interest in",
+          " design",
+          ", that's why I took a course in ux/ui design to potentiate my frontend skills with it."
+        ]
+      },
+      "random_facts": {
+        "title": "Random facts about me",
+        "description": [
+          "My favorite color is ",
+          "blue",
+          "; my favorite animal are ",
+          "eagles",
+          "; I like ",
+          "winter",
+          " because you can enjoy a good moment drinking a hot drink while being with others or while reading a good book. A place to visit could probably be a rural area in ",
+          "Japan",
+          ". And lastly, When choosing between day and night, I prefer",
+          " night",
+          ", because it's quiet and I can keep learning about constellations and see how the",
+          " stars",
+          ", weird mirrors of our universe, that move through the sky as the time goes by."
+        ]
+      }
+    },
+    "skills": {
+      "title": "My Skill Set",
+      "end_text": "Currently learning and always open to learn more"
+    },
+    "experience": {
+      "title": "Experience"
+    },
+    "projects": {
+      "title": "My Projects",
+      "demo_button": "Live Demo",
+      "in_progress": "Project in progress"
+    }
+  },
+  "es": {
+    "header": {
+      "about": "Acerca de mi",
+      "projects": "Proyectos",
+      "skills": "Habilidades",
+      "contact": "Contacto",
+      "experience": "Experiencia"
+    },
+    "hero": {
+      "title": [
+        "Hola!",
+        "Soy",
+        "Nico",
+        "Desarrollador Web"
+      ]
+    },
+    "about": {
+      "introduction": {
+        "title": "Sobre mí",
+        "description": [
+          "¡Hola! Soy",
+          " Nicolás Arrastía ",
+          ". Un joven desarrollador web, actualmente vivo en",
+          " Mar Chiquita, Argentina ",
+          "con mi prometida y nuestras tres mascotas. Mi lengua materna es el español, pero no tengo problema en hablar en inglés si es necesario. Soy apasionado por la tecnología, la ciencia, los idiomas y la literatura."
+        ]
+      },
+      "why_me": {
+        "title": "¿Por qué yo?",
+        "description": [
+          "Porque soy ",
+          "respetuoso",
+          ", ",
+          "curioso",
+          ",",
+          " amigable",
+          " y me encanta resolver problemas para otras personas para facilitarles la vida; disfruto aprendiendo cosas nuevas y trato de entender cómo funcionan las cosas. Además, tengo interés en ",
+          "diseño",
+          ", por eso tomé un curso de diseño UX/UI para potenciar mis habilidades en frontend con ello."
+        ]
+      },
+      "random_facts": {
+        "title": "Datos curiosos sobre mí",
+        "description": [
+          "Mi color favorito es el ",
+          "azul",
+          "; mi animal favorito son las ",
+          "águilas",
+          "; me gusta el",
+          " invierno",
+          ", porque se puede disfrutar de un buen momento tomando algo caliente mientras estás con otras personas o mientras lees un buen libro. Un lugar para visitar podría ser una zona rural en ",
+          "Japón",
+          ". Y por último, cuando tengo que elegir entre el día y la noche, prefiero",
+          " la noche",
+          ", porque es tranquila y puedo seguir aprendiendo sobre constelaciones y ver cómo las",
+          " estrellas",
+          ", extraños espejos de nuestro universo, que se mueven por el cielo con el paso del tiempo."
+        ]
+      }
+    },
+    "skills": {
+      "title": "Mis Habilidades",
+      "end_text": "Actualmente aprendiendo y siempre abierto a aprender más"
+    },
+    "experience": {
+      "title": "Experiencia"
+    },
+    "projects": {
+      "title": "Mis Proyectos",
+      "demo_button": "Demo",
+      "in_progress": "Proyecto en progreso"
+    }
+  }
+}

@@ -10,11 +10,12 @@ import Skills from "./components/Skills";
 import { Analytics } from "@vercel/analytics/react";
 import Contact from "./components/Contact";
 import Experience from "./components/Experience";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 // TODO: Add maxHeight to prevent scroll during animation
 export default function Home() {
   return (
-    <>
+    <LanguageProvider>
       <Analytics />
       <LoaderAnimation />
       <Header />
@@ -25,6 +26,6 @@ export default function Home() {
       {/* <Contact /> */}
       <Experience />
       <Footer />
-    </>
+    </LanguageProvider>
   );
 }

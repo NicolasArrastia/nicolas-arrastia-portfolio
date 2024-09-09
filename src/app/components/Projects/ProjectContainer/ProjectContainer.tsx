@@ -6,6 +6,8 @@ import SVGIcon from "@/components/SVGIcon";
 import { Github } from "@/assets/svg";
 import ButtonLink from "./ButtonLink";
 import InfoDropdown from "./InfoDropdown";
+import lang from "@/lang";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type Props = {
   data: ProjectData;
@@ -13,6 +15,7 @@ type Props = {
 };
 
 const ProjectContainer = ({ data, index }: Props) => {
+  const { language } = useLanguage();
   const { image, title, github, url, info } = data;
 
   return (
@@ -73,7 +76,9 @@ const ProjectContainer = ({ data, index }: Props) => {
           className="w-full"
         >
           <ButtonLink type="secondary" url={url}>
-            <span className="text-nowrap">Live Demo</span>
+            <span className="text-nowrap">
+              {lang[language].projects.demo_button}
+            </span>
           </ButtonLink>
         </motion.div>
         {info && (

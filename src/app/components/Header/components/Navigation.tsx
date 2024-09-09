@@ -2,6 +2,8 @@ import React from "react";
 import { NAV_OPTIONS } from "../constants";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
+import lang from "@/lang";
 
 const variants = {
   hover: { width: "100%" },
@@ -9,6 +11,8 @@ const variants = {
 };
 
 const Navigation = () => {
+  const { language } = useLanguage();
+
   return (
     <nav className="hidden md:block">
       <ul className="flex gap-4">
@@ -19,7 +23,7 @@ const Navigation = () => {
             key={label}
             className="px-2"
           >
-            <Link href={`#${href}`}>{label}</Link>
+            <Link href={`#${href}`}>{lang[language].header[label]}</Link>
             <motion.div
               transition={{ duration: 0.2 }}
               variants={variants}

@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { PICTURES } from "./constants";
 import { SectionIds } from "@/app/enum";
+import lang from "@/lang";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const TEXT_TRANSITION = {
   initial: { opacity: 0 },
@@ -14,43 +16,38 @@ const TEXT_TRANSITION = {
 };
 
 const About = () => {
+  const { language } = useLanguage();
+  const SECTION_TEXT = lang[language].about;
   return (
     <SectionLayout id={SectionIds.ABOUT}>
-      <TitleText text="About" />
+      <TitleText text={SECTION_TEXT.introduction.title} />
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 hyphens-auto">
         <div>
           <motion.p {...TEXT_TRANSITION}>
-            Hi! I&apos;m <span className="text-blue-400">Nicolás Arrastía</span>
-            . A young web developer, currently living in{" "}
-            <span className="text-blue-400">Mar Chiquita, Argentina</span> with
-            my fiancée and our three pets. My native language is spanish, but I
-            don&apos;t have any problem speaking in english if necessary. I am
-            passionate about technology, science, languages and literature.
+            {SECTION_TEXT.introduction.description.map((i) => (
+              <span key={i} className="even:text-blue-400">
+                {i}
+              </span>
+            ))}
           </motion.p>
-          <TitleText text="Why me?" className="!text-2xl" />
+          <TitleText text={SECTION_TEXT.why_me.title} className="!text-2xl" />
           <motion.p {...TEXT_TRANSITION}>
-            Because I am <span className="text-blue-400">respectful</span>,{" "}
-            <span className="text-blue-400">curious</span> and{" "}
-            <span className="text-blue-400">friendly</span> and I love solving
-            problems for other people to make their life easier; I enjoy
-            learning new things and I try to understand how things work. Also, I
-            have an interest in <span className="text-blue-400">design</span>,
-            that&apos;s why I took a course in ux/ui design to potentiate my
-            frontend skills with it.
+            {SECTION_TEXT.why_me.description.map((i, index) => (
+              <span key={`${i}-${index}`} className="even:text-blue-400">
+                {i}
+              </span>
+            ))}
           </motion.p>
-          <TitleText text="Random facts about me" className="text-2xl" />
+          <TitleText
+            text={SECTION_TEXT.random_facts.title}
+            className="!text-2xl"
+          />
           <motion.p {...TEXT_TRANSITION}>
-            My favorite color is <span className="text-blue-400">blue</span>; my
-            favorite animal are <span className="text-blue-400">eagles</span>; I
-            like <span className="text-blue-400">winter</span> because you can
-            enjoy a good moment drinking a hot drink while being with others or
-            while reading a good book. A place to visit could probably be a
-            rural area in <span className="text-blue-400">Japan</span>. And
-            lastly, When choosing between day and night, I prefer{" "}
-            <span className="text-blue-400">night</span>, because it&apos;s
-            quiet and I can keep learning about constellations and see how the{" "}
-            <span className="text-blue-400">stars</span>, weird mirrors of our
-            universe, move through the sky as the time goes by.
+            {SECTION_TEXT.random_facts.description.map((i) => (
+              <span key={i} className="even:text-blue-400">
+                {i}
+              </span>
+            ))}
           </motion.p>
         </div>
 

@@ -4,10 +4,14 @@ import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { ProjectData } from "../constants";
 import { StaticImageData } from "next/image";
+import { useLanguage } from "@/contexts/LanguageContext";
+import lang from "@/lang";
 
 type Props = ProjectData;
 
 export const IsInProgress = () => {
+  const { language } = useLanguage();
+
   return (
     <div className="flex items-center gap-1 size-8 w-fit">
       <SVGIcon
@@ -15,13 +19,18 @@ export const IsInProgress = () => {
         size={"1rem"}
         className={"bg-orange-600 drop-shadow-md"}
       />
-      <span className="text-orange-600 text-xs">Project in progress</span>
+      <span className="text-orange-600 text-xs">
+        {lang[language].projects.in_progress}
+      </span>
     </div>
   );
 };
 
 const InfoDropdown = ({ info, technologies, date, isInProgress }: Props) => {
   const [formattedDate, setFormattedDate] = useState<string | null>(null);
+
+  const { language } = useLanguage();
+  const INFO_TEXT = info[language];
 
   useEffect(() => {
     if (date) {
@@ -84,7 +93,7 @@ const InfoDropdown = ({ info, technologies, date, isInProgress }: Props) => {
             {formattedDate}
           </span>
         )}
-        <span>{info}</span>
+        <span>{INFO_TEXT}</span>
         <footer className="flex justify-between items-center">
           {isInProgress && <IsInProgress />}
           <div className="flex justify-end gap-2 ml-auto">

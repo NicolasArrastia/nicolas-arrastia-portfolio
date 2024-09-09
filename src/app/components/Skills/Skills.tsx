@@ -4,15 +4,20 @@ import TitleText from "@/components/TitleText";
 import { motion } from "framer-motion";
 import { SKILLS } from "./constants";
 import SkillContainer from "./SkillContainer";
+import { useLanguage } from "@/contexts/LanguageContext";
+import lang from "@/lang";
 
 const Skills = () => {
+  const { language } = useLanguage();
+  const SECTION_TEXT = lang[language].skills;
+
   return (
     <SectionLayout id={SectionIds.SKILLS}>
-      <TitleText text="My Skill Set" />
+      <TitleText text={SECTION_TEXT.title} />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
         {SKILLS.map(({ title, skills }) => (
-          <div key={title}>
+          <div key={title[language]}>
             <div className="flex relative">
               <motion.div
                 className="absolute bottom-2 w-2 h-[2.6rem] bg-blue-500"
@@ -21,7 +26,7 @@ const Skills = () => {
                 whileInView={{ opacity: 1, translateY: [-20, 0] }}
                 transition={{ delay: 0.5 }}
               />
-              <TitleText text={title} className="ml-4 !text-2xl" />
+              <TitleText text={title[language]} className="ml-4 !text-2xl" />
             </div>
             <motion.div
               initial="initial"
@@ -50,7 +55,7 @@ const Skills = () => {
       </div>
 
       <span className="text-neutral-500 w-full text-center block mt-8">
-        Currently learning and always open to learn more
+        {SECTION_TEXT.end_text}
       </span>
     </SectionLayout>
   );

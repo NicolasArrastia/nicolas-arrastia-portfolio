@@ -6,23 +6,23 @@ export const HEADER_HEIGHT = 47.53;
 
 export const NAV_OPTIONS: { label: string; href: SectionIds }[] = [
   {
-    label: "About",
+    label: "about",
     href: SectionIds.ABOUT,
   },
   {
-    label: "My Projects",
+    label: "projects",
     href: SectionIds.PROJECTS,
   },
   {
-    label: "My Skill Set",
+    label: "skills",
     href: SectionIds.SKILLS,
   },
   {
-    label: "Contact",
+    label: "contact",
     href: SectionIds.CONTACT,
   },
   {
-    label: "Experience",
+    label: "experience",
     href: SectionIds.EXPERIENCE,
   },
 ];

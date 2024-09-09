@@ -5,6 +5,7 @@ import SVGIcon from "@/components/SVGIcon";
 import { Star } from "@/assets/svg";
 import VerticalTextEffect from "./VerticalTextEffect";
 import { getInitials } from "@/app/utils";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const JobExperience = ({
   job,
@@ -13,6 +14,7 @@ const JobExperience = ({
   job: ExperienceType;
   index: number;
 }) => {
+  const { language } = useLanguage();
   const { title, role, image, startDate, endDate, achievements } = job;
   const formattedDateRange = `${format(startDate, "yyyy")}-${format(
     endDate,
@@ -72,7 +74,7 @@ const JobExperience = ({
         </div>
 
         <ul className="flex flex-col gap-1">
-          {achievements?.map((i, index) => (
+          {achievements[language].map((i, index) => (
             <li
               key={index}
               className="text-neutral-200 text-xs grid grid-cols-[1em_auto] gap-1 relative"

@@ -6,6 +6,7 @@ import MenuIcon from "./components/MenuIcon";
 import { NicolasLogo } from "@/assets/svg";
 import Menu from "./components/Menu";
 import Navigation from "./components/Navigation";
+import LanguageButton from "./components/LanguageButton";
 
 const Header = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -36,8 +37,8 @@ const Header = () => {
             : "bg-transparent"
         }  text-neutral-50`}
       >
-        <div className="max-w-screen-2xl m-auto py-2 px-4 md:px-16 flex justify-between items-center">
-          <Link href={"/"}>
+        <div className="max-w-screen-2xl m-auto py-2 px-4 md:px-16 flex justify-end gap-4 items-center">
+          <Link href={"/"} className="mr-auto">
             <Image src={NicolasLogo} width={35} alt={"nicolas arrastia logo"} />
           </Link>
           <MenuIcon
@@ -45,6 +46,7 @@ const Header = () => {
             handleClick={() => setIsMenuOpen((prev) => !prev)}
           />
           <Navigation />
+          <LanguageButton />
         </div>
       </header>
       <Menu
