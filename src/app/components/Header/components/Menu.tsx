@@ -35,7 +35,7 @@ const Menu = ({ isOpen = false, onClick }: Props) => {
         paddingTop: `calc(${HEADER_HEIGHT}px + 1rem)`,
       }}
     >
-      <ul className="flex flex-col items-end gap-4">
+      <ul className="text-xl flex flex-col items-end gap-4">
         {NAV_OPTIONS.map(({ label, href }) => (
           <li key={label}>
             <Link href={`#${href}`}>{lang[language].header[label]}</Link>
