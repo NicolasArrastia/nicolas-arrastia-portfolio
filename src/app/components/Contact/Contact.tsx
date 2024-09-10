@@ -80,7 +80,7 @@ const Contact = () => {
 
       <div
         onClick={handleCopyEmail}
-        className="cursor-pointer border active:bg-blue-500/20 border-neutral-50 w-fit m-auto text-lg grid grid-cols-[auto_auto] place-items-center overflow-hidden"
+        className="cursor-pointer border active:bg-blue-500/20 border-neutral-50 w-fit m-auto sm:text-lg grid grid-cols-[auto_auto] place-items-center overflow-hidden"
       >
         <span className="py-2 px-4">{EMAIL}</span>
         <div className="bg-neutral-50 h-full aspect-square grid place-items-center">
@@ -88,7 +88,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="flex gap-8 justify-center mt-8">
+      <div className="flex gap-8 justify-center mt-8 flex-wrap">
         <Button onClick={handleCopyEmail}>{SECTION_TEXT.copy_email}</Button>
         {BUTTONS.map((i) => {
           return (
