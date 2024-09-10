@@ -72,7 +72,7 @@ const InfoDropdown = ({ info, technologies, date, isInProgress }: Props) => {
           },
         }}
         transition={{ duration: 0.2 }}
-        className="absolute border bg-neutral-950 right-[0.12rem] -translate-y-full -top-5 w-80 p-4 flex flex-col gap-2 font-sans text-base"
+        className="absolute border bg-neutral-950 right-[0.12rem] -translate-y-full -top-5 w-[90vw] sm:w-[40vw] md:w-[40vw] 2xl:w-80 p-4 flex flex-col gap-2 font-sans text-base"
       >
         <SVGIcon
           src={DropdownTriangle}
