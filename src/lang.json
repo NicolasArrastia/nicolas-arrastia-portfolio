@@ -72,7 +72,14 @@
       "in_progress": "Project in progress"
     },
     "contact": {
-      "title": "Contact Me"
+      "work": "Did you liked my work and wanna work with me?",
+      "get_in_touch": "Get in touch!",
+      "copy_email": "Copy Email",
+      "email_subject": "I saw your portfolio!",
+      "email_body": "I saw your web portfolio and I'd like to work with you!"
+    },
+    "footer": {
+      "copied": "Copied!"
     }
   },
   "es": {
@@ -148,7 +155,14 @@
       "in_progress": "Proyecto en progreso"
     },
     "contact": {
-      "title": "Contactame"
+      "work": "¿Te gustó mi trabajo y quieres trabajar conmigo?",
+      "get_in_touch": "Ponte en contacto!",
+      "copy_email": "Copiar Email",
+      "email_subject": "Vi tu portfolio!",
+      "email_body": "Vi tu portfolio web y me gustaría trabajar contigo!"
+    },
+    "footer": {
+      "copied": "Copiado!"
     }
   }
 }

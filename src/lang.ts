@@ -40,7 +40,15 @@ type LangProjects = {
 };
 
 type LangContact = {
-  title: string;
+  work: string;
+  get_in_touch: string;
+  copy_email: string;
+  email_subject: string;
+  email_body: string;
+};
+
+type LangFooter = {
+  copied: string;
 };
 
 type LangContent = {
@@ -51,6 +59,7 @@ type LangContent = {
   experience: LangExperience;
   projects: LangProjects;
   contact: LangContact;
+  footer: LangFooter;
 };
 
 type LanguageJsonType = Record<Languages, LangContent>;

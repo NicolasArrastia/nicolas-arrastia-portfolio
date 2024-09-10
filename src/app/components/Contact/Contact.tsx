@@ -1,113 +1,103 @@
 import SectionLayout from "@/components/SectionLayout";
 import React, { ChangeEvent, useState } from "react";
 import { SectionIds } from "../../enum";
-import TitleText from "@/components/TitleText";
 import SVGIcon from "@/components/SVGIcon";
-import { Copy, Github } from "@/assets/svg";
-import { motion } from "framer-motion";
+import { Copy } from "@/assets/svg";
+import ButtonLink from "../Projects/ProjectContainer/ButtonLink";
+import { useLanguage } from "@/contexts/LanguageContext";
+import lang, { Languages } from "@/lang";
 
 const EMAIL = "nicolasarrastia@gmail.com";
 
-const EmailForm = () => {
-  const [subject, setSubject] = useState("");
-  const [body, setBody] = useState("");
+// todo move this component to a global component folder
+const Button = ({
+  children,
+  onClick,
+  type = "primary",
+}: {
+  children: React.ReactNode;
+  onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  type?: "primary" | "secondary";
+}) => {
+  return (
+    <button className="relative group" onClick={onClick}>
+      <div
+        className={`absolute transition-all size-full top-0 left-0 border group-hover:top-2 group-hover:left-2 pointer-events-none`}
+      />
+      <span
+        className={`flex relative items-center justify-center w-full py-2 p-4 border font-semibold ${
+          type === "primary" &&
+          "bg-neutral-50 text-neutral-950 border-neutral-950"
+        }`}
+      >
+        {children}
+      </span>
+    </button>
+  );
+};
 
-  const handleSubjectChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setSubject(event.target.value);
-  };
+const Contact = () => {
+  const { language } = useLanguage();
+  const SECTION_TEXT = lang[language].contact;
 
-  const handleBodyChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
-    setBody(event.target.value);
-  };
+  const BUTTONS: {
+    text: Record<Languages, string>;
+    url: string;
+    type?: "secondary";
+  }[] = [
+    {
+      text: { en: "Send Email", es: "Enviar Email" },
+      url: `mailto:${EMAIL}?subject=${encodeURIComponent(
+        SECTION_TEXT.email_subject
+      )}&body=${encodeURIComponent(SECTION_TEXT.email_body)}`,
+    },
+    {
+      text: { en: "Send from Gmail", es: "Enviar desde Gmail" },
+      url: `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}&su=${encodeURIComponent(
+        SECTION_TEXT.email_subject
+      )}&body=${encodeURIComponent(SECTION_TEXT.email_body)}`,
+    },
+    {
+      text: { en: "My LinkedIn", es: "Mi LinkedIn" },
+      url: "https://www.linkedin.com/in/nicolas-arrastia/", // todo add this url to some enum or global constants
+      type: "secondary",
+    },
+  ];
 
   const handleCopyEmail = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    event: React.MouseEvent<HTMLElement, MouseEvent>
   ) => {
     event.preventDefault();
     navigator.clipboard.writeText(EMAIL);
   };
 
   return (
-    <form action="" className="flex flex-col gap-4 bg-neutral-900 p-4">
-      <h3 className="text-xl">Send me an email</h3>
-
-      <input
-        type="text"
-        name="subject"
-        id="subject"
-        placeholder="Subject"
-        className="w-full bg-neutral-800 p-2"
-        value={subject}
-        onChange={handleSubjectChange}
-      />
-      <textarea
-        name="message"
-        id="message"
-        cols={30}
-        rows={10}
-        placeholder="Message"
-        className="w-full bg-neutral-800 p-2 max-h-60"
-        value={body}
-        onChange={handleBodyChange}
-      ></textarea>
-
-      <footer className="flex gap-4">
-        <a
-          className="w-full bg-neutral-800 p-2 text-center"
-          href={`mailto:${EMAIL}? subject=${subject} &body=${body}`}
-        >
-          Send
-        </a>
-
-        <button
-          className="w-full bg-neutral-800 p-2 text-center"
-          onClick={handleCopyEmail}
-        >
-          Or Copy Email
-        </button>
-      </footer>
-    </form>
-  );
-};
-
-export const SocialNetwork = () => {
-  return (
-    <div className="border h-full">
-      <div className="flex flex-col">
-        <SVGIcon src={Github} size="2rem" className="bg-neutral-50" />
-        <SVGIcon src={Github} size="2rem" className="bg-neutral-50" />
-        <SVGIcon src={Github} size="2rem" className="bg-neutral-50" />
-      </div>
-    </div>
-  );
-};
-
-const SECTIONS = [<SocialNetwork key="social" />, <EmailForm key="email" />];
-
-const Contact = () => {
-  return (
     <SectionLayout id={SectionIds.CONTACT}>
-      <TitleText text={"Contact Me"} />
+      <div className="text-center text-lg">{SECTION_TEXT.work}</div>
+      <div className="text-center text-4xl uppercase font-semibold my-10 tracking-wider">
+        {SECTION_TEXT.get_in_touch}
+      </div>
 
-      {/* <div className="grid gap-y-4 gap-x-8 sm:grid-cols-2">
-        {SECTIONS.map((section, index) => (
-          <motion.div
-            key={index}
-            viewport={{ once: true }}
-            initial={{ opacity: 0, translateY: -20 }}
-            whileInView={{ opacity: 1, translateY: 0 }}
-            transition={{
-              delay: 0.5 + index * 0.2,
-              duration: 0.5,
-            }}
-          >
-            {section}
-          </motion.div>
-        ))}
-      </div> */}
+      <div
+        onClick={handleCopyEmail}
+        className="cursor-pointer border active:bg-blue-500/20 border-neutral-50 w-fit m-auto text-lg grid grid-cols-[auto_auto] place-items-center overflow-hidden"
+      >
+        <span className="py-2 px-4">{EMAIL}</span>
+        <div className="bg-neutral-50 h-full aspect-square grid place-items-center">
+          <SVGIcon src={Copy} size={"1.8rem"} className={"bg-neutral-950"} />
+        </div>
+      </div>
 
-      <div>Did you liked my work?</div>
-      <div>get in touch</div>
+      <div className="flex gap-8 justify-center mt-8">
+        <Button onClick={handleCopyEmail}>{SECTION_TEXT.copy_email}</Button>
+        {BUTTONS.map((i) => {
+          return (
+            <ButtonLink key={i.text[language]} {...i}>
+              {i.text[language]}
+            </ButtonLink>
+          );
+        })}
+      </div>
     </SectionLayout>
   );
 };

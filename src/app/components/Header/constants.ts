@@ -11,19 +11,19 @@ export const NAV_OPTIONS: { label: HeaderSections; href: SectionIds }[] = [
     href: SectionIds.ABOUT,
   },
   {
+    label: HeaderSections.SKILLS,
+    href: SectionIds.SKILLS,
+  },
+  {
     label: HeaderSections.PROJECTS,
     href: SectionIds.PROJECTS,
   },
   {
-    label: HeaderSections.SKILLS,
-    href: SectionIds.SKILLS,
-  },
-  // {
-  //   label: HeaderSections.CONTACT,
-  //   href: SectionIds.CONTACT,
-  // },
-  {
     label: HeaderSections.EXPERIENCE,
     href: SectionIds.EXPERIENCE,
+  },
+  {
+    label: HeaderSections.CONTACT,
+    href: SectionIds.CONTACT,
   },
 ];
