@@ -48,7 +48,10 @@ const ProjectContainer = ({ data, index }: Props) => {
               },
             }}
             transition={{ duration: 0.2 }}
-            className={`absolute whitespace-normal origin-bottom-left text-8xl -bottom-3 -left-2 text-blue-300 font-semibold mix-blend-difference pointer-events-none`}
+            className={`absolute whitespace-normal origin-bottom-left text-6xl md:text-8xl -bottom-[0.2em] -left-[0.1em] text-blue-300 font-semibold mix-blend-difference pointer-events-none`}
+            style={{
+              fontSize: "clamp(3.75rem, 6.1607rem + -7.7143vw, 0.375rem)",
+            }}
           >
             {title}
           </motion.h3>
