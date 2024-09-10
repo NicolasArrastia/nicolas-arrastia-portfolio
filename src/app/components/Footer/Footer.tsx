@@ -4,6 +4,8 @@ import { SOCIAL_MEDIA } from "./constants";
 import { Email, OpenEmail } from "@/assets/svg";
 import { motion, useAnimate } from "framer-motion";
 import { useState } from "react";
+import lang from "@/lang";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Separator = () => (
   <div className="flex justify-center gap-2 pt-14">
@@ -16,6 +18,7 @@ const Separator = () => (
 const EMAIL = "nicolasarrastia@gmail.com";
 
 const EmailComponent = () => {
+  const { language } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [scope, animate] = useAnimate();
 
@@ -60,7 +63,7 @@ const EmailComponent = () => {
             },
           }}
         >
-          Copied!
+          {lang[language].footer.copied}
         </motion.div>
         <SVGIcon
           src={isOpen ? OpenEmail : Email}
