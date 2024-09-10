@@ -13,7 +13,7 @@ const CLASSES = {
 
 const ButtonLink = ({ children, url, type = "primary" }: ButtonLinkProps) => {
   return (
-    <div className="relative group bg-red-500">
+    <div className="relative group">
       <div
         className={`absolute transition-all size-full top-0 left-0 border group-hover:top-2 group-hover:left-2 pointer-events-none`}
       />
