@@ -14,6 +14,6 @@ export const SOCIAL_MEDIA: {
   {
     img: LinkedIn,
     alt: "LinkedIn link",
-    url: "https://www.linkedin.com/in/nicol%C3%A1s-arrast%C3%ADa/",
+    url: "https://www.linkedin.com/in/nicolas-arrastia/",
   },
 ];
