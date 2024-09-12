@@ -27,7 +27,7 @@ const litebox: ExperienceType = {
     ],
   },
   image:
-    "https://media.licdn.com/dms/image/D4D0BAQHVh59-gri-Jw/company-logo_200_200/0/1712761925779/hellolitebox_logo?e=1726099200&v=beta&t=agTUhBjE8Ltzt47x4fBxPxsfjE_SVM2Yna7pfuR1i3Q",
+    "https://media.licdn.com/dms/image/v2/D4D0BAQHVh59-gri-Jw/company-logo_200_200/company-logo_200_200/0/1712761925779/hellolitebox_logo?e=1733961600&v=beta&t=dbFT4J0lcNXV0O5k9opn2kwioYL8uFJ_e9UvAXiIOCs",
 };
 
 const freelancer: ExperienceType = {
