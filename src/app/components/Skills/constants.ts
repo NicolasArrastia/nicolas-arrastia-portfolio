@@ -53,6 +53,7 @@ const FRONTEND_SKILLS: SkillType[] = [
   { img: Next, name: "Next" },
   // { img: GraphQL, name: "GraphQl" },
   { img: Vue, name: "Vue" },
+  { img: Redux, name: "Redux" },
 ];
 
 const BACKEND_SKILLS: SkillType[] = [
@@ -72,7 +73,6 @@ const OTHER_SKILLS: SkillType[] = [
 ];
 
 const LEARNING_SKILLS: SkillType[] = [
-  { img: Redux, name: "Redux" },
   { img: PHP, name: "PHP" },
   // { img: React, name: "React Native" },
 ];
