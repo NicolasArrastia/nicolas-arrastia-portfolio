@@ -7,7 +7,7 @@ type Props = {
 };
 
 const SkillContainer = ({ data }: Props) => {
-  const { img, name } = data;
+  const { img, name, className } = data;
   return (
     <motion.div
       className="relative"
@@ -34,7 +34,11 @@ const SkillContainer = ({ data }: Props) => {
         transition={{ duration: 0.2 }}
         className="relative"
       >
-        <SVGIcon src={img} size={"50px"} className={"bg-neutral-200"} />
+        <SVGIcon
+          src={img}
+          size={"50px"}
+          className={className || "bg-neutral-50"}
+        />
 
         {data.miniIcons && (
           <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-[10px] flex">
@@ -43,7 +47,7 @@ const SkillContainer = ({ data }: Props) => {
                 key={index}
                 src={src}
                 size="20px"
-                className={` ${className}`}
+                className={`${className}`}
               />
             ))}
           </div>

@@ -8,7 +8,6 @@ import {
   CSS,
   React,
   Next,
-  GraphQL,
   Figma,
   Trello,
   Notion,
@@ -30,6 +29,7 @@ import { StaticImageData } from "next/image";
 export type SkillType = {
   img: StaticImageData;
   name: string;
+  className?: string;
   miniIcons?: { src: StaticImageData; className: string }[];
 };
 
@@ -39,41 +39,61 @@ const MiniIcons = {
 };
 
 const FRONTEND_SKILLS: SkillType[] = [
-  { img: React, name: "React", miniIcons: [MiniIcons.STARRED] },
+  {
+    img: React,
+    name: "React",
+    miniIcons: [MiniIcons.STARRED],
+    className: "bg-cyan-500",
+  },
   {
     img: Typescript,
     name: "Typescript",
     miniIcons: [MiniIcons.STARRED],
+    className: "bg-blue-500",
   },
-  { img: HTML, name: "HTML" },
-  { img: CSS, name: "CSS" },
-  { img: Javascript, name: "Javascript" },
-  { img: Sass, name: "Sass" },
-  { img: Tailwind, name: "Tailwind", miniIcons: [MiniIcons.FAVORITE] },
+  { img: HTML, name: "HTML", className: "bg-amber-500" },
+  { img: CSS, name: "CSS", className: "bg-sky-500" },
+  { img: Javascript, name: "Javascript", className: "bg-yellow-500" },
+  { img: Sass, name: "Sass", className: "bg-pink-400" },
+  {
+    img: Tailwind,
+    name: "Tailwind",
+    miniIcons: [MiniIcons.FAVORITE],
+    className: "bg-teal-500",
+  },
   { img: Next, name: "Next" },
-  // { img: GraphQL, name: "GraphQl" },
-  { img: Vue, name: "Vue" },
-  { img: Redux, name: "Redux" },
+  { img: Vue, name: "Vue", className: "bg-emerald-600" },
+  { img: Redux, name: "Redux", className: "bg-purple-500" },
 ];
 
 const BACKEND_SKILLS: SkillType[] = [
-  { img: Django, name: "Django" },
-  { img: NodeJS, name: "NodeJS" },
+  { img: Django, name: "Django", className: "bg-lime-900" },
+  { img: NodeJS, name: "NodeJS", className: "bg-lime-500" },
   { img: SQL, name: "SQL" },
 ];
 
 const OTHER_SKILLS: SkillType[] = [
-  { img: Git, name: "Git" },
-  { img: AzureDevOps, name: "ADO" },
-  { img: Trello, name: "Trello" },
-  { img: Notion, name: "Notion", miniIcons: [MiniIcons.STARRED] },
-  { img: Figma, name: "Figma" },
-  { img: Python, name: "Python", miniIcons: [MiniIcons.FAVORITE] },
+  { img: Git, name: "Git", className: "bg-orange-600" },
+  { img: AzureDevOps, name: "ADO", className: "bg-sky-500" },
+  { img: Trello, name: "Trello", className: "bg-blue-500" },
+  {
+    img: Notion,
+    name: "Notion",
+    miniIcons: [MiniIcons.STARRED],
+    className: "bg-neutral-300",
+  },
+  { img: Figma, name: "Figma", className: "bg-purple-500" },
+  {
+    img: Python,
+    name: "Python",
+    miniIcons: [MiniIcons.FAVORITE],
+    className: "bg-blue-400",
+  },
   { img: Scrum, name: "SCRUM" },
 ];
 
 const LEARNING_SKILLS: SkillType[] = [
-  { img: PHP, name: "PHP" },
+  { img: PHP, name: "PHP", className: "bg-indigo-400" },
   // { img: React, name: "React Native" },
 ];
 
