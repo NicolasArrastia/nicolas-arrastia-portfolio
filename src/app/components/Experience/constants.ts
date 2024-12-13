@@ -9,7 +9,7 @@ export type ExperienceType = {
   endDate: Date;
 };
 
-const litebox: ExperienceType = {
+const LITEBOX: ExperienceType = {
   title: "Litebox",
   role: "Frontend Engineer",
   startDate: new Date(2021, 9, 25),
@@ -27,10 +27,10 @@ const litebox: ExperienceType = {
     ],
   },
   image:
-    "https://media.licdn.com/dms/image/v2/D4D0BAQHVh59-gri-Jw/company-logo_200_200/company-logo_200_200/0/1712761925779/hellolitebox_logo?e=1733961600&v=beta&t=dbFT4J0lcNXV0O5k9opn2kwioYL8uFJ_e9UvAXiIOCs",
+    "https://media.licdn.com/dms/image/v2/D4D0BAQHVh59-gri-Jw/company-logo_200_200/company-logo_200_200/0/1712761925779/hellolitebox_logo?e=1742428800&v=beta&t=sSvdUik9pQRIAEUdaLsKuHLNhj-nEUaOypvc5CCMI_A",
 };
 
-const freelancer: ExperienceType = {
+const FREELANCER: ExperienceType = {
   title: "Freelancer",
   role: "Frontend Developer",
   startDate: new Date(2020, 9, 25),
@@ -43,4 +43,4 @@ const freelancer: ExperienceType = {
   },
 };
 
-export const EXPERIENCE: ExperienceType[] = [freelancer, litebox];
+export const EXPERIENCE: ExperienceType[] = [FREELANCER, LITEBOX];
