@@ -32,7 +32,7 @@ const LITEBOX: ExperienceType = {
 
 const FREELANCER: ExperienceType = {
   title: "Freelancer",
-  role: "Frontend Developer",
+  role: "Web Developer",
   startDate: new Date(2020, 9, 25),
   endDate: new Date(2024, 6),
   achievements: {
@@ -43,4 +43,16 @@ const FREELANCER: ExperienceType = {
   },
 };
 
-export const EXPERIENCE: ExperienceType[] = [FREELANCER, LITEBOX];
+const EQUIPO_GURU: ExperienceType = {
+  title: "Equipo Guru",
+  role: "Web Developer",
+  startDate: new Date(2025, 3, 5),
+  endDate: new Date(),
+  achievements: {
+    en: [],
+    es: []
+  },
+  image: "https://media.licdn.com/dms/image/v2/D4D0BAQGqgogWmti0rg/company-logo_200_200/company-logo_200_200/0/1736254153842/equipodotguru_logo?e=1749686400&v=beta&t=vyXfIpNlkNlTwIfkRW5cCl-5pG6v5zhLp83NkLcnWZ0"
+}
+
+export const EXPERIENCE: ExperienceType[] = [FREELANCER, LITEBOX, EQUIPO_GURU];
