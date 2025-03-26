@@ -58,7 +58,7 @@ const JobExperience = ({
               <Image className="size-full" src={image} alt={title} />
             ) : (
               <span className="text-2xl">
-                {getInitials(role, 2)}
+                {getInitials(title, 2)}
                 {/* {role.split(" ")[0].split("")[0]}
                 {role.split(" ")[1].split("")[0]} */}
               </span>
