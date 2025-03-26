@@ -1,9 +1,11 @@
+import { EquipoDOTGuru, Litebox } from "@/assets/img/experience";
 import { Languages } from "@/lang";
+import { StaticImageData } from "next/image";
 
 export type ExperienceType = {
   title: string;
   role: string;
-  image?: string;
+  image?: StaticImageData;
   achievements: Record<Languages, string[]>;
   startDate: Date;
   endDate: Date;
@@ -26,8 +28,7 @@ const LITEBOX: ExperienceType = {
       "Desarrollé varios componentes que se usaron en la aplicación",
     ],
   },
-  image:
-    "https://media.licdn.com/dms/image/v2/D4D0BAQHVh59-gri-Jw/company-logo_200_200/company-logo_200_200/0/1712761925779/hellolitebox_logo?e=1742428800&v=beta&t=sSvdUik9pQRIAEUdaLsKuHLNhj-nEUaOypvc5CCMI_A",
+  image: Litebox
 };
 
 const FREELANCER: ExperienceType = {
@@ -52,7 +53,7 @@ const EQUIPO_GURU: ExperienceType = {
     en: [],
     es: []
   },
-  image: "https://media.licdn.com/dms/image/v2/D4D0BAQGqgogWmti0rg/company-logo_200_200/company-logo_200_200/0/1736254153842/equipodotguru_logo?e=1749686400&v=beta&t=vyXfIpNlkNlTwIfkRW5cCl-5pG6v5zhLp83NkLcnWZ0"
+  image: EquipoDOTGuru
 }
 
 export const EXPERIENCE: ExperienceType[] = [FREELANCER, LITEBOX, EQUIPO_GURU];

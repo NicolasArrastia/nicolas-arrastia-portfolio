@@ -1,5 +1,6 @@
 import { format } from "date-fns";
 import { ExperienceType } from "./constants";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import SVGIcon from "@/components/SVGIcon";
 import { Star } from "@/assets/svg";
@@ -54,7 +55,7 @@ const JobExperience = ({
             {...transition}
           >
             {image ? (
-              <img className="size-full" src={image} alt={title} />
+              <Image className="size-full" src={image} alt={title} />
             ) : (
               <span className="text-2xl">
                 {getInitials(role, 2)}

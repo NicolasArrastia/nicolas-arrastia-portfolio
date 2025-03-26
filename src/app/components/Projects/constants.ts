@@ -15,6 +15,7 @@ import {
   Typescript,
 } from "@/assets/svg";
 import { Languages } from "@/lang";
+import { StaticImageData } from "next/image";
 
 enum SkillsIconsEnum {
   REACT = React,
@@ -28,7 +29,7 @@ enum SkillsIconsEnum {
 
 export type ProjectData = {
   title: string;
-  image?: any;
+  image: StaticImageData;
   url: string;
   github: string;
   info: Record<Languages, string>; // todo make this a type
