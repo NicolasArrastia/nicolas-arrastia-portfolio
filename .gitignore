@@ -6,6 +6,10 @@
 .pnp.js
 .yarn/install-state.gz
 
+# pnpm (local only — Vercel deploys with npm via package-lock.json)
+pnpm-lock.yaml
+pnpm-workspace.yaml
+
 # testing
 /coverage
 
