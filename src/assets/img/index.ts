@@ -10,6 +10,7 @@ import JsonTable from "./projects/json-table.png";
 import WebPortfolio from "./projects/web-portfolio.png";
 import Liteflix from "./projects/liteflix.png";
 import RepuestosRyO from "./projects/RepuestosRyO.png";
+import GuessWho from "./projects/GuessWho.png";
 
 export {
   GreatWaveOfKanagawa,
@@ -23,4 +24,5 @@ export {
   WebPortfolio,
   Liteflix,
   RepuestosRyO,
+  GuessWho,
 };

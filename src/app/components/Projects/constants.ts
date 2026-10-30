@@ -5,6 +5,7 @@ import {
   WebPortfolio,
   Liteflix,
   RepuestosRyO,
+  GuessWho,
 } from "@/assets/img";
 import {
   Next,
@@ -40,6 +41,18 @@ export type ProjectData = {
 };
 
 export const PROJECTS: ProjectData[] = [
+  {
+    title: "Guess Who",
+    image: GuessWho,
+    url: "https://guess-who-sable.vercel.app/",
+    github: "https://github.com/NicolasArrastia/guess-who",
+    info: {
+      en: "A game I made for fun. The backend is hosted on Render, so the first request may take a while as the server wakes up.",
+      es: "Un juego que hice por diversión. El backend está hospedado en Render, así que la primera petición puede tardar un poco mientras el servidor despierta.",
+    },
+    technologies: [SkillsIconsEnum.HTML, SkillsIconsEnum.JAVASCRIPT],
+    date: new Date(2026, 9),
+  },
   {
     title: "Repuestos RyO",
     image: RepuestosRyO,
