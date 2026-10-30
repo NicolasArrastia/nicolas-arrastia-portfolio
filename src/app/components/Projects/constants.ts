@@ -4,6 +4,7 @@ import {
   JsonTable,
   WebPortfolio,
   Liteflix,
+  RepuestosRyO,
 } from "@/assets/img";
 import {
   Next,
@@ -31,7 +32,7 @@ export type ProjectData = {
   title: string;
   image: StaticImageData;
   url: string;
-  github: string;
+  github?: string;
   info: Record<Languages, string>; // todo make this a type
   technologies: SkillsIconsEnum[];
   date?: Date;
@@ -39,6 +40,17 @@ export type ProjectData = {
 };
 
 export const PROJECTS: ProjectData[] = [
+  {
+    title: "Repuestos RyO",
+    image: RepuestosRyO,
+    url: "https://repuestosryo.com.ar/",
+    info: {
+      en: "An e-commerce site I built for an auto parts business. It showcases the product catalog and lets customers get in touch to place their orders.",
+      es: "Un sitio e-commerce que hice para un negocio de repuestos automotores. Muestra el catálogo de productos y permite a los clientes contactar para hacer sus pedidos.",
+    },
+    technologies: [SkillsIconsEnum.REACT, SkillsIconsEnum.TAILWIND],
+    date: new Date(2025, 3),
+  },
   {
     title: "Todo App",
     image: TodoApp,

@@ -59,18 +59,20 @@ const ProjectContainer = ({ data, index }: Props) => {
       </motion.main>
 
       <footer className="flex gap-4 mt-4">
-        <motion.div
-          viewport={{ once: true }}
-          initial={{ opacity: 0, translateY: -20 }}
-          whileInView={{ translateY: [-20, 0], opacity: [0, 1] }}
-          transition={{ delay: 0.4 + index * 0.2, duration: 0.4 }}
-          className="w-full"
-        >
-          <ButtonLink url={github}>
-            <SVGIcon src={Github} size={"20px"} className={"bg-white mr-2"} />
-            Github
-          </ButtonLink>
-        </motion.div>
+        {github && (
+          <motion.div
+            viewport={{ once: true }}
+            initial={{ opacity: 0, translateY: -20 }}
+            whileInView={{ translateY: [-20, 0], opacity: [0, 1] }}
+            transition={{ delay: 0.4 + index * 0.2, duration: 0.4 }}
+            className="w-full"
+          >
+            <ButtonLink url={github}>
+              <SVGIcon src={Github} size={"20px"} className={"bg-white mr-2"} />
+              Github
+            </ButtonLink>
+          </motion.div>
+        )}
         <motion.div
           viewport={{ once: true }}
           initial={{ opacity: 0, translateY: -20 }}

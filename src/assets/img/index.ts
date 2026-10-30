@@ -9,6 +9,7 @@ import BeatEmUpGame from "./projects/beat_em_up_game.png";
 import JsonTable from "./projects/json-table.png";
 import WebPortfolio from "./projects/web-portfolio.png";
 import Liteflix from "./projects/liteflix.png";
+import RepuestosRyO from "./projects/RepuestosRyO.png";
 
 export {
   GreatWaveOfKanagawa,
@@ -21,4 +22,5 @@ export {
   JsonTable,
   WebPortfolio,
   Liteflix,
+  RepuestosRyO,
 };
