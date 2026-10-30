@@ -1,28 +1,33 @@
-import { Languages } from "@/lang";
+"use client";
 import {
   createContext,
-  useState,
   useContext,
-  ReactNode,
-  SetStateAction,
-  Dispatch,
+  type ReactNode,
 } from "react";
+import { Languages } from "@/lang";
 
 type LanguageContextProps = {
   language: Languages;
-  setLanguage: Dispatch<SetStateAction<Languages>>;
 };
 
-const LanguageContext = createContext<LanguageContextProps | undefined>({
-  language: Languages.EN,
-  setLanguage: () => {},
-});
+const LanguageContext = createContext<LanguageContextProps | undefined>(
+  undefined
+);
 
-export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState(Languages.EN);
-
+/**
+ * The active language comes from the `[lang]` route segment, so it is decided
+ * on the server and already correct on the first paint. Switching language
+ * means navigating to another URL, not updating local state.
+ */
+export const LanguageProvider = ({
+  children,
+  language,
+}: {
+  children: ReactNode;
+  language: Languages;
+}) => {
   return (
-    <LanguageContext.Provider value={{ language, setLanguage }}>
+    <LanguageContext.Provider value={{ language }}>
       {children}
     </LanguageContext.Provider>
   );
@@ -30,9 +35,11 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
+
   if (!context) {
     throw new Error("useLanguage must be used within a LanguageProvider");
   }
+
   return context;
 };
 

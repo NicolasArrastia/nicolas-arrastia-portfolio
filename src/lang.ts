@@ -5,6 +5,32 @@ export enum Languages {
   EN = "en",
 }
 
+export const LANGUAGES = Object.values(Languages);
+
+export const DEFAULT_LANGUAGE = Languages.EN;
+
+export const isLanguage = (value: unknown): value is Languages =>
+  LANGUAGES.includes(value as Languages);
+
+/**
+ * Replaces the leading locale segment of a pathname, keeping the rest intact.
+ * `getLocalizedPath("/es", Languages.EN)` -> `/en`
+ * `getLocalizedPath("/es/about", Languages.EN)` -> `/en/about`
+ */
+export const getLocalizedPath = (
+  pathname: string,
+  language: Languages
+): string => {
+  const withoutLanguage = pathname.replace(
+    new RegExp(`^/(${LANGUAGES.join("|")})(?=/|$)`),
+    ""
+  );
+
+  const hasPath = withoutLanguage !== "" && withoutLanguage !== "/";
+
+  return hasPath ? `/${language}${withoutLanguage}` : `/${language}`;
+};
+
 export enum HeaderSections {
   ABOUT = "about",
   PROJECTS = "projects",

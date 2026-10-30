@@ -1,8 +1,9 @@
+"use client";
 import { ArFlag, UsFlag } from "@/assets/svg";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Languages } from "@/lang";
+import { getLocalizedPath, Languages } from "@/lang";
 import { motion } from "framer-motion";
-import React from "react";
+import { usePathname, useRouter } from "next/navigation";
 
 const LANG_ICON: Record<Languages, object> = {
   es: ArFlag,
@@ -10,10 +11,15 @@ const LANG_ICON: Record<Languages, object> = {
 };
 
 const LanguageButton = () => {
-  const { language, setLanguage } = useLanguage();
+  const { language } = useLanguage();
+  const pathname = usePathname();
+  const router = useRouter();
 
   const handleSwitchLanguage = () => {
-    setLanguage(language === Languages.ES ? Languages.EN : Languages.ES);
+    const nextLanguage =
+      language === Languages.ES ? Languages.EN : Languages.ES;
+
+    router.push(getLocalizedPath(pathname, nextLanguage));
   };
 
   return (
@@ -31,7 +37,11 @@ const LanguageButton = () => {
         },
       }}
     >
-      <img src={(LANG_ICON[language] as { src: string }).src} width="35rem" />
+      <img
+        alt={language === Languages.ES ? "Switch to english" : "Cambiar a español"}
+        src={(LANG_ICON[language] as { src: string }).src}
+        width={35}
+      />
     </motion.div>
   );
 };
