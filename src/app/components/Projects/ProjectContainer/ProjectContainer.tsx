@@ -26,11 +26,7 @@ const ProjectContainer = ({ data, index }: Props) => {
         whileInView={{ top: [-20, 0], opacity: [0, 1] }}
         transition={{ delay: 0.2 + index * 0.2, duration: 0.5 }}
       >
-        <motion.div
-          initial={"blur"}
-          whileHover={"hover"}
-          className="relative bg-neutral-400 aspect-video overflow-hidden"
-        >
+        <div className="group/card relative bg-neutral-400 aspect-video overflow-hidden">
           <div className="h-full w-full">
             <Image
               className="object-cover h-full w-full blur-sm group-hover:blur-0 scale-125 group-hover:scale-100 transition duration-500"
@@ -38,24 +34,15 @@ const ProjectContainer = ({ data, index }: Props) => {
               alt={title}
             />
           </div>
-          <motion.h3
-            variants={{
-              hover: {
-                opacity: 0,
-              },
-              blur: {
-                opacity: 1,
-              },
-            }}
-            transition={{ duration: 0.2 }}
-            className={`absolute whitespace-normal origin-bottom-left text-6xl md:text-8xl -bottom-[0.2em] -left-[0.1em] text-blue-300 font-semibold mix-blend-difference pointer-events-none`}
+          <h3
+            className={`absolute whitespace-normal origin-bottom-left text-6xl md:text-8xl -bottom-[0.2em] -left-[0.1em] text-blue-300 font-semibold mix-blend-difference pointer-events-none transition-opacity duration-200 ease-out group-hover/card:opacity-0`}
             style={{
               fontSize: "clamp(3.75rem, 6.1607rem + -7.7143vw, 0.375rem)",
             }}
           >
             {title}
-          </motion.h3>
-        </motion.div>
+          </h3>
+        </div>
       </motion.main>
 
       <footer className="flex gap-4 mt-4">
