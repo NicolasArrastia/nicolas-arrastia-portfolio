@@ -3,7 +3,7 @@ import { ArFlag, UsFlag } from "@/assets/svg";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getLocalizedPath, Languages } from "@/lang";
 import { motion } from "framer-motion";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const LANG_ICON: Record<Languages, object> = {
   es: ArFlag,
@@ -11,15 +11,22 @@ const LANG_ICON: Record<Languages, object> = {
 };
 
 const LanguageButton = () => {
-  const { language } = useLanguage();
+  const { language, setLanguage } = useLanguage();
   const pathname = usePathname();
-  const router = useRouter();
 
   const handleSwitchLanguage = () => {
     const nextLanguage =
       language === Languages.ES ? Languages.EN : Languages.ES;
 
-    router.push(getLocalizedPath(pathname, nextLanguage));
+    setLanguage(nextLanguage);
+
+    // Keep the URL shareable without a navigation: `router.push` would
+    // remount the page and replay the loader and scroll-reveal animations.
+    window.history.replaceState(
+      null,
+      "",
+      `${getLocalizedPath(pathname, nextLanguage)}${window.location.hash}`
+    );
   };
 
   return (

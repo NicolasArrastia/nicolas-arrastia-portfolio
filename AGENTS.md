@@ -29,8 +29,10 @@ The matcher deliberately skips `/_next`, `/api`, and anything with a file extens
 
 ## Language handling
 
-- The active language is **decided on the server** from the `[lang]` segment and passed into `LanguageProvider` by the layout. It is correct on the first paint — do not reintroduce client-side language state or `localStorage`; there is none.
-- `useLanguage()` returns `{ language }` and is the only way components read the language. There is deliberately **no `setLanguage`** — switching language is a navigation (`LanguageButton` calls `router.push(getLocalizedPath(pathname, next))`), which is what keeps the URL shareable.
+- The active language **starts** from the `[lang]` segment: the layout passes it into `LanguageProvider` as `initialLanguage`, so SSR and the first paint always match the URL.
+- `useLanguage()` returns `{ language, setLanguage }` and is the only way components read or change it. `setLanguage` updates client state only, so the tree is **not** remounted and the loader/scroll-reveal animations do not replay.
+- `LanguageButton` calls `setLanguage(next)` and syncs the URL with `window.history.replaceState`. Do **not** switch back to `router.push`/`useRouter` for language changes — a route navigation is what caused the whole site to re-render and replay its animations.
+- The URL is still the source of truth on load (a refresh keeps the language at `/<lang>`), so no `localStorage` or cookie is needed. `LanguageProvider` re-syncs if `initialLanguage` changes and updates `document.documentElement.lang`.
 - `useLanguage` throws outside a provider. This works because the context default is `undefined`; don't reintroduce a default object, it silently defeats the guard.
 
 ## Content lives in two places

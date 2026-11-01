@@ -35,7 +35,9 @@ export default function RootLayout({
   return (
     <html lang={language}>
       <body className={inter.className}>
-        <LanguageProvider language={language}>{children}</LanguageProvider>
+        <LanguageProvider initialLanguage={language}>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );
